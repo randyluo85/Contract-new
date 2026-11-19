@@ -96,16 +96,15 @@ class DoclingParser:
 # ---------------- 编号恢复（修正阶梯第 1 层：解析期减错） ----------------
 # 实测事实（安徽智界物流协议.pdf）：编号 3.1.1~3.1.7 在 PDF 原始文字层行首存在，
 # 但 Docling 布局管线把编号前缀整段丢弃（185 个 item 0 命中），导致下游漏拆。
-# 对策：用 pypdf 按页提取原始行，行首命中编号家族且去空白后与块开头一致时，补回编号。
+# 实测事实（奇瑞采购主合同.pdf）：第七条下的 1. 2. 3. 同样被丢弃。
+# 对策：用 pypdf 按页提取原始行，行首命中编号家族表（numbering.FAMILIES，与 splitter
+# 共用单一事实源）且去空白后与块开头一致时，补回编号。
 
-_NUM_PREFIX_RE = re.compile(
-    r"^((?:第[一二三四五六七八九十百千零〇两\d]+条)"
-    r"|(?:\d+(?:\.\d+)+)"
-    r"|(?:[一二三四五六七八九十百千零〇两\d]+、)"
-    r"|(?:（[一二三四五六七八九十百千零〇两\d]+）))"
-)
+from numbering import match_prefix
 
-_SQUASH = lambda s: re.sub(r"\s+", "", s or "")
+
+def _SQUASH(s: str) -> str:
+    return re.sub(r"\s+", "", s or "")
 
 
 def match_numbered_line(body_text: str, raw_lines: list[str]) -> str | None:
@@ -114,13 +113,13 @@ def match_numbered_line(body_text: str, raw_lines: list[str]) -> str | None:
     if len(head) < 8:  # 太短易误配
         return None
     for ln in raw_lines:
-        m = _NUM_PREFIX_RE.match(ln.strip())
-        if not m:
+        hit = match_prefix(ln.strip())
+        if not hit:
             continue
-        rest = _SQUASH(ln.strip()[m.end():])[:24]
-        if len(rest) >= 8 and rest == head:
-            number = m.group(1)
-            return number[:-1] if number.endswith("、") else number  # 顿号不进编号
+        _family, token, rest, _rule = hit
+        rest_squash = _SQUASH(rest)[:24]
+        if len(rest_squash) >= 8 and rest_squash == head:
+            return token
     return None
 
 
@@ -143,7 +142,7 @@ def _recover_numbers(blocks: list[StructBlock], pdf_path: str) -> None:
     for b in blocks:
         if b.kind != "text" or not b.text or b.page_no is None:
             continue
-        if _NUM_PREFIX_RE.match(b.text.strip()):  # 块本身带编号，不重复补
+        if match_prefix(b.text.strip()):  # 块本身带编号，不重复补
             continue
         number = match_numbered_line(b.text, page_lines.get(b.page_no) or [])
         if number:
