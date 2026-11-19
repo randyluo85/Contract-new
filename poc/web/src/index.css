@@ -68,3 +68,31 @@ section { flex: 1; position: relative; min-width: 0; background: #525659; }
   font-size: 13px;
   margin-bottom: 8px;
 }
+.node-line.clickable { cursor: pointer; }
+.node-line.clickable:hover { background: #eff6ff; border-radius: 4px; }
+.node-line.active { background: #dbeafe; border-radius: 4px; }
+.locating {
+  font-size: 12px;
+  color: #2563eb;
+  background: #eff6ff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+.readback {
+  margin-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  font-size: 12px;
+}
+.readback span { color: #6b7280; }
+.readback blockquote {
+  margin: 4px 0 0;
+  padding: 6px 8px;
+  background: #f9fafb;
+  border-left: 3px solid #2563eb;
+  border-radius: 0 4px 4px 0;
+  max-height: 140px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
