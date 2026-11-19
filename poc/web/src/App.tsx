@@ -264,18 +264,18 @@ export function App() {
             body: JSON.stringify({ anchors: [{ page: 0, charStart: 0, charCount: 0, exactText: '', status: 'pending' }] }),
           }).catch(() => {});
         } else if (verdict && verdict.length) {
-          const a = verdict[0];
+          // 多窗口锚点：整条款覆盖（每窗一个锚点，全部唯一命中）
           await fetch(`/api/clauses/${c.id}/anchors`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
-              anchors: [{
+              anchors: verdict.map((a) => ({
                 page: a.pageIndex, // 0 基 pageIndex 存库（onPick 与 SearchHit 同基）
                 charStart: a.charStart,
                 charCount: a.charCount,
                 exactText: a.exactText,
                 status: 'linked',
-              }],
+              })),
             }),
           }).catch(() => {});
         }
