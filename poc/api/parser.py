@@ -7,6 +7,7 @@ Docling 配置（Q20）：docling-slim、do_ocr=False、heading_hierarchy 不开
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
 from typing import Protocol
 
@@ -88,7 +89,65 @@ class DoclingParser:
                 text = getattr(item, "text", None)
                 if text and text.strip():
                     blocks.append(StructBlock(text=text, page_no=page_no, kind="text"))
+        _recover_numbers(blocks, pdf_path)
         return blocks
+
+
+# ---------------- 编号恢复（修正阶梯第 1 层：解析期减错） ----------------
+# 实测事实（安徽智界物流协议.pdf）：编号 3.1.1~3.1.7 在 PDF 原始文字层行首存在，
+# 但 Docling 布局管线把编号前缀整段丢弃（185 个 item 0 命中），导致下游漏拆。
+# 对策：用 pypdf 按页提取原始行，行首命中编号家族且去空白后与块开头一致时，补回编号。
+
+_NUM_PREFIX_RE = re.compile(
+    r"^((?:第[一二三四五六七八九十百千零〇两\d]+条)"
+    r"|(?:\d+(?:\.\d+)+)"
+    r"|(?:[一二三四五六七八九十百千零〇两\d]+、)"
+    r"|(?:（[一二三四五六七八九十百千零〇两\d]+）))"
+)
+
+_SQUASH = lambda s: re.sub(r"\s+", "", s or "")
+
+
+def match_numbered_line(body_text: str, raw_lines: list[str]) -> str | None:
+    """块正文若与某条「编号+剩余」的原始行同头，返回应补回的编号。纯函数，可测。"""
+    head = _SQUASH(body_text)[:24]
+    if len(head) < 8:  # 太短易误配
+        return None
+    for ln in raw_lines:
+        m = _NUM_PREFIX_RE.match(ln.strip())
+        if not m:
+            continue
+        rest = _SQUASH(ln.strip()[m.end():])[:24]
+        if len(rest) >= 8 and rest == head:
+            number = m.group(1)
+            return number[:-1] if number.endswith("、") else number  # 顿号不进编号
+    return None
+
+
+def _recover_numbers(blocks: list[StructBlock], pdf_path: str) -> None:
+    """就地补回被 Docling 丢弃的行首编号（按块 provenance 页对齐原始文字层）。"""
+    from pypdf import PdfReader
+
+    try:
+        reader = PdfReader(pdf_path)
+    except Exception:
+        return
+    page_lines: dict[int, list[str]] = {}
+    for i, page in enumerate(reader.pages):
+        try:
+            text = page.extract_text() or ""
+        except Exception:
+            continue
+        page_lines[i + 1] = [ln for ln in text.splitlines() if ln.strip()]
+
+    for b in blocks:
+        if b.kind != "text" or not b.text or b.page_no is None:
+            continue
+        if _NUM_PREFIX_RE.match(b.text.strip()):  # 块本身带编号，不重复补
+            continue
+        number = match_numbered_line(b.text, page_lines.get(b.page_no) or [])
+        if number:
+            b.text = f"{number} {b.text}"
 
 
 def default_parser() -> Parser:
