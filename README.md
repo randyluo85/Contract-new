@@ -9,9 +9,14 @@
 
 | 路径 | 说明 |
 | --- | --- |
+| `AGENTS.md` | 给 agent 的入口：issue tracker、triage 标签、域文档三行摘要 |
+| `docs/agents/issue-tracker.md` | 追踪器约定：GitHub Issues + `gh` 命令 + wayfinder 地图/子票/阻塞操作 |
+| `docs/agents/triage-labels.md` | 五个 triage 角色 → 本仓库实际标签串的映射 |
+| `docs/agents/domain.md` | 域文档消费规则；布局为 single-context（根 `GLOSSARY.md` + `docs/adr/`） |
 | `docs/agents/workspace.yaml` | 本工作区的 issue 追踪后端选择（matt skills deck 的锚文件，随仓库共享） |
-| `docs/agents/issue-tracker.md` | 追踪器约定（如存在） |
 | `scripts/` | 需要版本化的脚本（目前为空） |
+
+`GLOSSARY.md` 与 `docs/adr/` 尚未创建：按 `docs/agents/domain.md` 的约定，等第一次真正写下词条或架构决定时再建。
 
 ## 本地工作区（不入库）
 
