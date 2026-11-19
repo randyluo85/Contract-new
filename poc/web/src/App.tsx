@@ -228,7 +228,10 @@ export function App() {
       const target = docRef.current;
       const list = clausesRef.current;
       if (target && target.parseStatus === 'done' && list.length > 0 && viewerRef.current) {
-        const pending = list.filter((c) => c.anchors.length === 0 && (c.content ?? '').trim());
+        const pending = list.filter(
+          (c) => c.anchors.length === 0 &&
+            ((c.content ?? '').trim() || (c.number || c.title || '').trim()),
+        );
         if (pending.length > 0) {
           await generateAnchors(target.id, pending);
         }
@@ -252,10 +255,15 @@ export function App() {
         reveal: (p: SearchHit['page'], o: any) => caps.stage.reveal(p, o),
       };
       for (const c of pending) {
-        const content = c.content ?? '';
-        if (!content.trim()) continue;
+        try {
+        // 候选段：标题行（编号+标题，PDF 里真实相邻）与正文**分段**滑窗——
+        // 不拼接（拼接空格在 PDF 不存在会让首窗失配）；纯标题节点也有标题窗可锚
+        const head = [c.number, c.title].filter(Boolean).join(' ').trim();
+        const body = (c.content ?? '').trim();
+        const segments = [head, body].filter(Boolean);
+        if (!segments.length) continue;
         setLocating(`${c.number || c.title} 正在核验…`);
-        const verdict = await anchorsForClause(viewerCaps, content);
+        const verdict = await anchorsForClause(viewerCaps, segments);
         if (verdict === 'ambiguous') {
           // 歧义铁律：停待确认（写入 pending 锚点占位：无区间，仅状态）
           await fetch(`/api/clauses/${c.id}/anchors`, {
@@ -280,6 +288,10 @@ export function App() {
           }).catch(() => {});
         }
         // null → 未定位：不写锚点
+        } catch (err) {
+          console.warn('[t3] clause anchor failed:', c.number || c.title, err);
+          // 单条款失败不阻断整体生成
+        }
       }
     } finally {
       genRunningRef.current = false;

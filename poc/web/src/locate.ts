@@ -30,7 +30,7 @@ export interface AnchorDraft {
   status: 'linked' | 'pending';
 }
 
-/** 条款正文 → 滑窗切分：每窗 ≤60 字（按空白边界不切断），覆盖整个条款。 */
+/** 条款全文（编号+标题+正文）→ 滑窗切分：每窗 ≤60 字（空白边界不切断），覆盖标题行与整个正文。 */
 export function windowTexts(content: string, windowN = 60, step = 55): string[] {
   const t = (content ?? '').replace(/\s+/g, ' ').trim();
   if (!t) return [];
@@ -44,7 +44,8 @@ export function windowTexts(content: string, windowN = 60, step = 55): string[] 
       if (ws > 0 && ws < end + 10) end = ws;
     }
     const piece = t.slice(i, end).trim();
-    if (piece.length >= 8) out.push(piece);
+    // 短窗 ≥4 字（「第1条 原则」这类纯标题节点只有短标题窗）；短窗歧义自然落入待确认，不产生错误锚点
+    if (piece.length >= 4) out.push(piece);
     if (end >= t.length) break;
   }
   return out;
@@ -53,17 +54,26 @@ export function windowTexts(content: string, windowN = 60, step = 55): string[] 
 /** 归一化比对（空白折叠为单空格，与 search fold 语义一致——不删空白！）。 */
 const NORM = (s: string) => (s || '').replace(/\s+/g, ' ').trim();
 
+/** needle 的数字形态变体：「第1条」→「第 1 条」等（PDF 文字层常见数字两侧空格）。 */
+function expandDigitForms(text: string): string[] {
+  const variants: string[] = [];
+  const expanded = text.replace(/(第)(\d+)(条)/g, '$1 $2 $3');
+  if (expanded !== text) variants.push(expanded);
+  return variants;
+}
+
 /**
- * 单窗口核验：命中集合中，读回文本与 needle 归一化一致者为命中；
+ * 单窗口核验：命中集合中，读回文本与任一 needle 形态归一化一致者为命中
+ * （needle 数组含原文与形态变体，如「第1条 原则」/「第 1 条 原则」）；
  * 唯一 → {unique}；零 → 'nomatch'；多个 → 'ambiguous'。
  */
 export async function verifyWindow(
   caps: ViewerCaps,
-  text: string,
+  needles: string | string[],
   hits: readonly SearchHit[],
 ): Promise<{ unique: SearchHit & { exactText: string } } | 'ambiguous' | 'nomatch'> {
   if (!hits.length) return 'nomatch';
-  const needle = NORM(text);
+  const forms = (Array.isArray(needles) ? needles : [needles]).map(NORM);
   const goods: (SearchHit & { exactText: string })[] = [];
   for (const h of hits) {
     caps.select({ page: h.page, start: h.start, count: h.count });
@@ -73,7 +83,7 @@ export async function verifyWindow(
     } catch {
       continue; // 读失败不算命中也不算排除
     }
-    if (NORM(read) === needle) {
+    if (forms.includes(NORM(read))) {
       goods.push({ ...h, exactText: read });
     }
   }
@@ -83,22 +93,30 @@ export async function verifyWindow(
 }
 
 /**
- * 条款 → 多窗口锚点（覆盖全文）。
+ * 条款 → 多窗口锚点（覆盖标题行与正文）。
+ * 输入 segments：[标题行, 正文]——分窗各自滑切，**不跨段拼接**（拼接会在标题|正文
+ * 边界引入 PDF 里不存在的空格，导致首窗失配、标题行无锚点）。
  * 返回 null=未定位（无任何窗口命中）；'ambiguous'=待确认（≥1 窗口歧义）；
- * 锚点数组=全部唯一命中窗口（整条款覆盖）。
+ * 锚点数组=全部唯一命中窗口（标题行+整条款正文覆盖）。
  */
 export async function anchorsForClause(
   caps: ViewerCaps,
-  content: string,
+  segments: string[],
 ): Promise<AnchorDraft[] | 'ambiguous' | null> {
-  const windows = windowTexts(content);
+  const windows = segments.flatMap((s) => windowTexts(s));
   if (!windows.length) return null;
   const drafts: AnchorDraft[] = [];
   let ambiguous = false;
   let anyHit = false;
   for (const w of windows) {
-    const hits = await caps.findAll({ text: w, wholeWord: false });
-    const verdict = await verifyWindow(caps, w, hits);
+    // needle 形态族：原文 + 数字展开变体（「第1条」→「第 1 条」，PDF 文字层常见数字两侧空格）
+    const forms = [w, ...expandDigitForms(w)];
+    let hits: readonly SearchHit[] = [];
+    for (const f of forms) {
+      hits = await caps.findAll({ text: f, wholeWord: false });
+      if (hits.length) break;
+    }
+    const verdict = await verifyWindow(caps, forms, hits);
     if (verdict === 'ambiguous') {
       ambiguous = true; // 该窗口歧义：整条款停待确认（铁律）
       continue;
