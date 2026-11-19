@@ -27,6 +27,10 @@ poc/web/dist/
 poc/web/.vite/
 !/poc/samples/
 !/poc/samples/**
+!/poc/fixtures.json
+!/poc/TEST-REPORT.md
+!/poc/parse-export.json
+!/poc/test-results.json
 
 # ---- 明确排除（即使以后调整白名单也别误提交）----
 # _work/ 是本地流水线产物：抽取结果、PDF 测试、EmbedPDF 源码克隆

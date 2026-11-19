@@ -1,0 +1,381 @@
+{
+ "doc": "SAMPLE",
+ "docId": "25bc0b09-5586-4ac4-b361-cc401e30e9d7",
+ "cases": [
+  {
+   "id": "F01",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "3c6914bf-97b9-4413-b815-e1c4159bb7fa",
+   "expectPage": 0,
+   "expectFragment": "ANHUI ZHIJIE NEW ENE",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F02",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "8853ed09-e8ed-4b97-9321-f8826bb4bb9b",
+   "expectPage": 1,
+   "expectFragment": "目录",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F03",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "20ddf9cb-418e-4ff8-951e-7c75ae3ff2fa",
+   "expectPage": 2,
+   "expectFragment": "1.1 预选供应商必须按智界公司的物流要",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F04",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "149f6a37-8e69-4267-886f-72573ac3e0a1",
+   "expectPage": 2,
+   "expectFragment": "1.2 供应商在供货过程中不仅须遵守本《",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F05",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "7a468d18-87f5-4574-88cc-f22c93b48cd9",
+   "expectPage": 2,
+   "expectFragment": "1.3 达到循环取货要求供应商",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F06",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "96fde9e3-faaf-4440-aa5c-e0abcfabd0ed",
+   "expectPage": 2,
+   "expectFragment": "1.4 供应商在物流供货过程上对报价、操",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F07",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "expectPage": 3,
+   "expectFragment": "3.1 包装原则",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F08",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "32bab980-d9dd-4009-af1b-deb8f320ad27",
+   "expectPage": 3,
+   "expectFragment": "3.1.1 包装设计以智界公司",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F09",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "379a3aa7-13bd-4bef-955c-9bb9c59d274c",
+   "expectPage": 3,
+   "expectFragment": "3.1.2 供应商总焊装件要求出厂及上线",
+   "binding": "auto",
+   "note": "linked 锚点，点击断言跳页+读回"
+  },
+  {
+   "id": "F10",
+   "dir": "forward",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": "347497b4-699a-4463-8f56-2bd133d5c25d",
+   "expectPage": null,
+   "expectFragment": null,
+   "binding": "manual",
+   "note": "歧义停待确认（铁律），人工绑定后转已关联"
+  },
+  {
+   "id": "F11",
+   "dir": "forward",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": "6cf47663-feb7-4956-b484-af843c0f64e1",
+   "expectPage": null,
+   "expectFragment": null,
+   "binding": "manual",
+   "note": "歧义停待确认（铁律），人工绑定后转已关联"
+  },
+  {
+   "id": "F12",
+   "dir": "forward",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": "336174b4-276d-4232-9643-71bd03815d52",
+   "expectPage": null,
+   "expectFragment": null,
+   "binding": "manual",
+   "note": "歧义停待确认（铁律），人工绑定后转已关联"
+  },
+  {
+   "id": "F13",
+   "dir": "forward",
+   "expect": "unlocated",
+   "doc": "SAMPLE",
+   "clause": "147412d3-84b7-48e3-8939-5fdafb25b6b3",
+   "expectPage": null,
+   "expectFragment": null,
+   "binding": "none",
+   "note": "无文字层命中——未定位提示，不错误高亮"
+  },
+  {
+   "id": "F14",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "fcdbf3c8-9b06-453b-bac9-55196031c01f",
+   "expectPage": 3,
+   "expectFragment": "3.1.3 新品包装方案设计及实施应按照",
+   "binding": "auto",
+   "note": "linked 锚点"
+  },
+  {
+   "id": "F15",
+   "dir": "forward",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "ae6208ce-c5af-4008-9698-8fc5d6516017",
+   "expectPage": 3,
+   "expectFragment": "3.1.4 新项目车型及单件",
+   "binding": "auto",
+   "note": "linked 锚点"
+  },
+  {
+   "id": "R01",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "3c6914bf-97b9-4413-b815-e1c4159bb7fa",
+   "selection": {
+    "page": 0,
+    "start": 24,
+    "end": 28
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R02",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "8853ed09-e8ed-4b97-9321-f8826bb4bb9b",
+   "selection": {
+    "page": 1,
+    "start": -1,
+    "end": 3
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R03",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "20ddf9cb-418e-4ff8-951e-7c75ae3ff2fa",
+   "selection": {
+    "page": 2,
+    "start": 363,
+    "end": 367
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R04",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "149f6a37-8e69-4267-886f-72573ac3e0a1",
+   "selection": {
+    "page": 2,
+    "start": 428,
+    "end": 432
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R05",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "7a468d18-87f5-4574-88cc-f22c93b48cd9",
+   "selection": {
+    "page": 2,
+    "start": 508,
+    "end": 512
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R06",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "96fde9e3-faaf-4440-aa5c-e0abcfabd0ed",
+   "selection": {
+    "page": 2,
+    "start": 814,
+    "end": 818
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R07",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "selection": {
+    "page": 3,
+    "start": 79,
+    "end": 83
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R08",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "32bab980-d9dd-4009-af1b-deb8f320ad27",
+   "selection": {
+    "page": 3,
+    "start": 92,
+    "end": 96
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R09",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "379a3aa7-13bd-4bef-955c-9bb9c59d274c",
+   "selection": {
+    "page": 3,
+    "start": 190,
+    "end": 194
+   },
+   "binding": "auto",
+   "note": "锚点中段选区断言命中条款"
+  },
+  {
+   "id": "R10",
+   "dir": "reverse",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": null,
+   "selection": {
+    "page": 3,
+    "start": 80,
+    "end": 92
+   },
+   "binding": "manual",
+   "note": "跨条款边界选区→候选列表"
+  },
+  {
+   "id": "R11",
+   "dir": "reverse",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": null,
+   "selection": {
+    "page": 4,
+    "start": 802,
+    "end": 814
+   },
+   "binding": "manual",
+   "note": "跨条款边界选区→候选列表"
+  },
+  {
+   "id": "R12",
+   "dir": "reverse",
+   "expect": "ambiguous",
+   "doc": "SAMPLE",
+   "clause": null,
+   "selection": {
+    "page": 5,
+    "start": 296,
+    "end": 308
+   },
+   "binding": "manual",
+   "note": "跨条款边界选区→候选列表"
+  },
+  {
+   "id": "R13",
+   "dir": "reverse",
+   "expect": "none",
+   "doc": "SAMPLE",
+   "clause": null,
+   "selection": {
+    "page": 3,
+    "start": 0,
+    "end": 4
+   },
+   "binding": "none",
+   "note": "无锚点区域→空提示（正确行为）"
+  },
+  {
+   "id": "R14",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "fcdbf3c8-9b06-453b-bac9-55196031c01f",
+   "selection": {
+    "page": 3,
+    "start": 336,
+    "end": 340
+   },
+   "binding": "auto",
+   "note": "锚点中段选区"
+  },
+  {
+   "id": "R15",
+   "dir": "reverse",
+   "expect": "unique",
+   "doc": "SAMPLE",
+   "clause": "ae6208ce-c5af-4008-9698-8fc5d6516017",
+   "selection": {
+    "page": 3,
+    "start": 441,
+    "end": 445
+   },
+   "binding": "auto",
+   "note": "锚点中段选区"
+  }
+ ]
+}

@@ -1,0 +1,3088 @@
+{
+ "schema": "contract-poc/1",
+ "document": {
+  "fileName": "安徽智界物流协议.pdf",
+  "pageCount": 16
+ },
+ "clauses": [
+  {
+   "number": "",
+   "title": "安徽智界新能源汽车有限公司",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 0,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "ANHUI ZHIJIE NEW ENERGY",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 1,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 15,
+     "charCount": 23,
+     "exactText": "ANHUI ZHIJIE NEW ENERGY",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "AUTOMOBILE CO.,LTD",
+   "parentId": null,
+   "content": "零部件物流标准及要求",
+   "sortOrder": 2,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "目录",
+   "parentId": null,
+   "content": "前言\n此标准及要求是根据智界公司零部件入厂物流要求结合在日常工作中实际 发生和存在的情况而制定，其目的是为了能够在新件定点前明确其物流要求， 使预选供应商能够更准确的完成物流费用报价，为今后批量供货时实施物流要 求提供基础和保证；同时对已批量供货的供应商物流进行审核，使之达成智界 物流要求规范，智界公司零部件物流部门可以对物流标准进一步进行明确和调 整。\n在日常的供货和操作过程中，所有供应商必须遵照此《零部件物流标准及 要求》和其它智界公司书面提出的具体物流要求，履行供应商与智界公司合同 所规定的各项义务和责任，杜绝所有不符合现象，从而提高整个物流环节的操 作效率和控制能力。\n智界公司零部件物流部门拥有本《零部件物流标准及要求》的最终解释 权。",
+   "sortOrder": 3,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 1,
+     "charStart": 0,
+     "charCount": 2,
+     "exactText": "目录",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 0,
+     "charCount": 62,
+     "exactText": "前言\n此标准及要求是根据智界公司零部件入厂物流要求结合在日常工作中实际\n发生和存在的情况而制定，其目的是为了能够在新件定",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 57,
+     "charCount": 51,
+     "exactText": "够在新件定点前明确其物流要求，\n使预选供应商能够更准确的完成物流费用报价，为今后批量供货时实施物流要",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 114,
+     "charCount": 66,
+     "exactText": "础和保证；同时对已批量供货的供应商物流进行审核，使之达成智界\n物流要求规范，智界公司零部件物流部门可以对物流标准进一步进行明确和调",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 170,
+     "charCount": 63,
+     "exactText": "准进一步进行明确和调\n整。\n在日常的供货和操作过程中，所有供应商必须遵照此《零部件物流标准及\n要求》和其它智界公司书面提",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 228,
+     "charCount": 62,
+     "exactText": "公司书面提出的具体物流要求，履行供应商与智界公司合同\n所规定的各项义务和责任，杜绝所有不符合现象，从而提高整个物流环节的操",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 284,
+     "charCount": 54,
+     "exactText": "物流环节的操\n作效率和控制能力。\n智界公司零部件物流部门拥有本《零部件物流标准及要求》的最终解释\n权。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第1条",
+   "title": "原则",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 4,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "1.1",
+   "title": "预选供应商必须按智界公司的物流要求组织自己的物流工作",
+   "parentId": "336174b4-276d-4232-9643-71bd03815d52",
+   "content": "，并根据 具体的物流要求明细，完成采购报价中的物流细分报价。",
+   "sortOrder": 5,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 2,
+     "charStart": 350,
+     "charCount": 30,
+     "exactText": "1.1 预选供应商必须按智界公司的物流要求组织自己的物流工作",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 380,
+     "charCount": 31,
+     "exactText": "，并根据\n具体的物流要求明细，完成采购报价中的物流细分报价。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.2",
+   "title": "供应商在供货过程中不仅须遵守本《零部件物流标准及要求》所述物",
+   "parentId": "336174b4-276d-4232-9643-71bd03815d52",
+   "content": "流要求，亦须遵守在本《零部件物流标准及要求》未着重或未提及的智界公司 规定的其它方面的物流标准和要求。",
+   "sortOrder": 6,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 2,
+     "charStart": 413,
+     "charCount": 34,
+     "exactText": "1.2 供应商在供货过程中不仅须遵守本《零部件物流标准及要求》所述物",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 449,
+     "charCount": 52,
+     "exactText": "流要求，亦须遵守在本《零部件物流标准及要求》未着重或未提及的智界公司\n规定的其它方面的物流标准和要求。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.3",
+   "title": "达到循环取货要求供应商",
+   "parentId": "336174b4-276d-4232-9643-71bd03815d52",
+   "content": "，应积极配合参与智界公司开展的循环取货 工作。供应商在智界公司循环取货项目规划路线内，需全力组织实施循环取货 项目开展各项工作。采用承运商 MR 方式运送，供应商必须依据智界公司计划物 流部要求，在与承运商约定好的时间窗口将指定数量的物料交付至智界公司指 定的第三方物流公司。供应商物流设施必须满足智界公司物流要求，并且满足 每周 7 天 24 小时响应 MR 承运商取货要求。供应商须具备接受和发运零件以及 物料包装的卡车/集装箱车辆卸货道口。智界公司负责零件运输的情况下，供应 商须确保将零件安全地装载到智界公司指定MR承运商的车辆上。",
+   "sortOrder": 7,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 2,
+     "charStart": 503,
+     "charCount": 15,
+     "exactText": "1.3 达到循环取货要求供应商",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 518,
+     "charCount": 55,
+     "exactText": "，应积极配合参与智界公司开展的循环取货\n工作。供应商在智界公司循环取货项目规划路线内，需全力组织实施循环取货",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 575,
+     "charCount": 61,
+     "exactText": "项目开展各项工作。采用承运商 MR 方式运送，供应商必须依据智界公司计划物\n流部要求，在与承运商约定好的时间窗口将指定数",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 631,
+     "charCount": 53,
+     "exactText": "口将指定数量的物料交付至智界公司指\n定的第三方物流公司。供应商物流设施必须满足智界公司物流要求，并且满足",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 689,
+     "charCount": 60,
+     "exactText": "7 天 24 小时响应 MR 承运商取货要求。供应商须具备接受和发运零件以及\n物料包装的卡车/集装箱车辆卸货道口。智界",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.4",
+   "title": "供应商在物流供货过程上对报价、操作方案有任何变化均须获得智界",
+   "parentId": "336174b4-276d-4232-9643-71bd03815d52",
+   "content": "零部件物流部门的认可、同意后方可实施，否则将由供应商承担由此引起的后 果。",
+   "sortOrder": 8,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 2,
+     "charStart": 799,
+     "charCount": 34,
+     "exactText": "1.4 供应商在物流供货过程上对报价、操作方案有任何变化均须获得智界",
+     "status": "linked"
+    },
+    {
+     "page": 2,
+     "charStart": 835,
+     "charCount": 38,
+     "exactText": "零部件物流部门的认可、同意后方可实施，否则将由供应商承担由此引起的后\n果。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第2条",
+   "title": "供应商的地理位置",
+   "parentId": null,
+   "content": "为确保供应商在接到智界公司要货信息后能够在控制时间内完成交货，要 求供应商位于智界公司附近（供应商进入智界公司指定的中转库亦认为满足此\n要求）。原则上本地排序供货应（路程距离≤5 公里）可进行直供至车间道 口，其余均要求进入智界公司指定的三方物流完成物流配送。",
+   "sortOrder": 9,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "第3条",
+   "title": "包装要求",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 10,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "3.1",
+   "title": "包装原则",
+   "parentId": "f98c00a6-2095-4def-bc89-bc0f9b0032a0",
+   "content": "",
+   "sortOrder": 11,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 77,
+     "charCount": 8,
+     "exactText": "3.1 包装原则",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.1",
+   "title": "包装设计以智界公司",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "CPS 及 TPM 要求为包装业务开展的总原则，包 装设计应充分体现 CPS 和 TPM 核心要素，以此提升效率及质量，降低供应链成 本。",
+   "sortOrder": 12,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 87,
+     "charCount": 15,
+     "exactText": "3.1.1 包装设计以智界公司",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 103,
+     "charCount": 67,
+     "exactText": "CPS 及 TPM 要求为包装业务开展的总原则，包\n装设计应充分体现 CPS 和 TPM 核心要素，以此提升效率及质量，降低供应链成",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 159,
+     "charCount": 15,
+     "exactText": "率及质量，降低供应链成\n本。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.2",
+   "title": "供应商总焊装件要求出厂及上线包装均采用直送工位循环包装",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，包 装模数符合供应链尺寸链要求，以期满足运输装载率最大化，推广全程使用专 用器具、折叠铁箱、塑料箱、围板箱包装方式，具体适用类型由智界公司包装 工程师参考零件特性及包装标准化确认； KD件要求采用符合海外直发件标准 纸箱；",
+   "sortOrder": 13,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 176,
+     "charCount": 33,
+     "exactText": "3.1.2 供应商总焊装件要求出厂及上线包装均采用直送工位循环包装",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 209,
+     "charCount": 62,
+     "exactText": "，包\n装模数符合供应链尺寸链要求，以期满足运输装载率最大化，推广全程使用专\n用器具、折叠铁箱、塑料箱、围板箱包装方式，具",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.3",
+   "title": "新品包装方案设计及实施应按照",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "RFQ 单件《物流要求》执行（由采 购部门发布），在生产过程中依据 CPS 原则提出的包装优化需求，供应商应积 极配合满足；《物流要求》文件作为物流协议主体的一部分。",
+   "sortOrder": 14,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 328,
+     "charCount": 20,
+     "exactText": "3.1.3 新品包装方案设计及实施应按照",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 349,
+     "charCount": 56,
+     "exactText": "RFQ 单件《物流要求》执行（由采\n购部门发布），在生产过程中依据 CPS 原则提出的包装优化需求，供应商应积",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 407,
+     "charCount": 27,
+     "exactText": "极配合满足；《物流要求》文件作为物流协议主体的一部分。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.4",
+   "title": "新项目车型及单件",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "B 点开发产品包装投入，原则上必须按照智界公 司《包装标准要求》投入标准包装容器，若沿用已批量车型包装，供应商在和 采购部门明确商务合同前，必须由物流及相关部门确认沿用器具是否满足要 求，经物流、质量、生产工程师现场实物评审，确认满足包装标准、质量防护 及人机工程后方可沿用，否则对来件进行拒收，影响生产由乙方自行承担，在 物流季度评价考核中体现最低分值，同时根据采购主合同中相关条款给予经济 考核。",
+   "sortOrder": 15,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 436,
+     "charCount": 14,
+     "exactText": "3.1.4 新项目车型及单件",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 451,
+     "charCount": 58,
+     "exactText": "B 点开发产品包装投入，原则上必须按照智界公\n司《包装标准要求》投入标准包装容器，若沿用已批量车型包装，供应商在和",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 507,
+     "charCount": 62,
+     "exactText": "在和\n采购部门明确商务合同前，必须由物流及相关部门确认沿用器具是否满足要\n求，经物流、质量、生产工程师现场实物评审，确认",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 564,
+     "charCount": 52,
+     "exactText": "评审，确认满足包装标准、质量防护\n及人机工程后方可沿用，否则对来件进行拒收，影响生产由乙方自行承担，在",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 621,
+     "charCount": 36,
+     "exactText": "度评价考核中体现最低分值，同时根据采购主合同中相关条款给予经济\n考核。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.5",
+   "title": "包装设计满足质量防护要求",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，上线包装在确保质量前提下（质量部 门定义）不得出现内部防护（如 PE 袋、珍珠棉、气泡袋、再生纸等），应通过 包装设计规避防护风险。",
+   "sortOrder": 16,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 659,
+     "charCount": 18,
+     "exactText": "3.1.5 包装设计满足质量防护要求",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 677,
+     "charCount": 56,
+     "exactText": "，上线包装在确保质量前提下（质量部\n门定义）不得出现内部防护（如 PE 袋、珍珠棉、气泡袋、再生纸等），应通过",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 735,
+     "charCount": 11,
+     "exactText": "包装设计规避防护风险。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.6",
+   "title": "专用器具设计满足人机工程",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，对于部分框架式结构专用器具，两侧 及背面采用新材料设计观察窗口实现过目知数，框架式专用器具宽度超过 1100mm，取件面底部增加取件口，减少二面取件，方便员工取件，取件最低高 度450mm(含零件主体高度）。",
+   "sortOrder": 17,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 748,
+     "charCount": 18,
+     "exactText": "3.1.6 专用器具设计满足人机工程",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 766,
+     "charCount": 51,
+     "exactText": "，对于部分框架式结构专用器具，两侧\n及背面采用新材料设计观察窗口实现过目知数，框架式专用器具宽度超过",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.7",
+   "title": "总焊装每箱零件存放数量按照",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "120 的公约数或公倍数；小件及标准 件必须有内包装，内包装必须有标签,包装装载量超过 500 件的，每 100 或 200 件为一小包装。",
+   "sortOrder": 18,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 3,
+     "charStart": 877,
+     "charCount": 19,
+     "exactText": "3.1.7 总焊装每箱零件存放数量按照",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 897,
+     "charCount": 53,
+     "exactText": "120 的公约数或公倍数；小件及标准\n件必须有内包装，内包装必须有标签,包装装载量超过 500 件的，每",
+     "status": "linked"
+    },
+    {
+     "page": 3,
+     "charStart": 953,
+     "charCount": 16,
+     "exactText": "0 或 200\n件为一小包装。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.8",
+   "title": "KD",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "件装箱量按照 120 的公约数或公倍数，不得出现零头箱，到货包 装应确保外观完好，内衬防护良好，满足KD件直发。",
+   "sortOrder": 19,
+   "suspicious": false,
+   "anchors": []
+  },
+  {
+   "number": "3.1.9",
+   "title": "供应商铁制器具制作在智界公司芜湖基地物流所推荐的器具制作商",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "中择优选择，供应商器具提供数量应以智界公司物流技术部门提供期量为推算 标准，供应商的提供数量须不少于期量标准所推算的数量。",
+   "sortOrder": 20,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 0,
+     "charCount": 35,
+     "exactText": "3.1.9 供应商铁制器具制作在智界公司芜湖基地物流所推荐的器具制作商",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 37,
+     "charCount": 61,
+     "exactText": "中择优选择，供应商器具提供数量应以智界公司物流技术部门提供期量为推算\n标准，供应商的提供数量须不少于期量标准所推算的数量",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 93,
+     "charCount": 6,
+     "exactText": "推算的数量。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.10",
+   "title": "供应商投入器具符合智界公司芜湖基地包装标准",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，使用周期为六 年，供应商需每半年对器具进行整体维护，日常对使用损坏的器具应及时维 修，如门帘破损、内衬掉落、板材变形等，严重影响质量或现场 5S 的破损器具 禁止使用。",
+   "sortOrder": 21,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 101,
+     "charCount": 28,
+     "exactText": "3.1.10 供应商投入器具符合智界公司芜湖基地包装标准",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 129,
+     "charCount": 62,
+     "exactText": "，使用周期为六\n年，供应商需每半年对器具进行整体维护，日常对使用损坏的器具应及时维\n修，如门帘破损、内衬掉落、板材变形等",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 186,
+     "charCount": 31,
+     "exactText": "板材变形等，严重影响质量或现场 5S 的破损器具\n禁止使用。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.11",
+   "title": "供应商过程新增补器具应按照流程重新通知智界公司芜湖基地物流",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "包装工程师评审，满足包装标准要求、质量防护及人机工程后方可批量制作， 交付，一经发现擅自投入，将依据《采购主合同》给予考核。",
+   "sortOrder": 22,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 219,
+     "charCount": 36,
+     "exactText": "3.1.11 供应商过程新增补器具应按照流程重新通知智界公司芜湖基地物流",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 257,
+     "charCount": 61,
+     "exactText": "包装工程师评审，满足包装标准要求、质量防护及人机工程后方可批量制作，\n交付，一经发现擅自投入，将依据《采购主合同》给予考",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 313,
+     "charCount": 7,
+     "exactText": "同》给予考核。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.12",
+   "title": "供应商所投入的标准塑料箱应每年按照",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "20%进行增补，并通知智界 公司包装工程师签订《器具交付表》，同时智界公司鼓励供应商出厂包装采用 全程折叠标准塑料箱、围板箱或铁箱等循环使用包装，以降低物流成本。",
+   "sortOrder": 23,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 322,
+     "charCount": 24,
+     "exactText": "3.1.12 供应商所投入的标准塑料箱应每年按照",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 347,
+     "charCount": 62,
+     "exactText": "20%进行增补，并通知智界\n公司包装工程师签订《器具交付表》，同时智界公司鼓励供应商出厂包装采用\n全程折叠标准塑料箱、围",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 404,
+     "charCount": 26,
+     "exactText": "塑料箱、围板箱或铁箱等循环使用包装，以降低物流成本。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.13",
+   "title": "出厂及上线包装变更申请应得到智界公司（CHERY）认可",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，不得擅 自变更，VFF 试装车生产时需按照已批准包装方案供货，一经发现未按照已生 效包装方案执行或私自变更配送包装，物流部门将依据智界公司相关条款给予 考核；",
+   "sortOrder": 24,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 432,
+     "charCount": 34,
+     "exactText": "3.1.13 出厂及上线包装变更申请应得到智界公司（CHERY）认可",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 466,
+     "charCount": 62,
+     "exactText": "，不得擅\n自变更，VFF 试装车生产时需按照已批准包装方案供货，一经发现未按照已生\n效包装方案执行或私自变更配送包装，物",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 523,
+     "charCount": 26,
+     "exactText": "送包装，物流部门将依据智界公司相关条款给予\n考核；",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.14",
+   "title": "上线包装禁止使用纸包装或其它一次性包装",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "，需要外观防护的应采 用专用可循环使用的内衬材料，原则上禁止使用一次性包装物单件包裹，特殊 件经物流部门协商同意后除外。",
+   "sortOrder": 25,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 551,
+     "charCount": 26,
+     "exactText": "3.1.14 上线包装禁止使用纸包装或其它一次性包装",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 577,
+     "charCount": 62,
+     "exactText": "，需要外观防护的应采\n用专用可循环使用的内衬材料，原则上禁止使用一次性包装物单件包裹，特殊\n件经物流部门协商同意后除外。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.15",
+   "title": "所有包装应便于运输、搬运、储存、配送、方便取用等物流过程和",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "生产过程，损害零件质量、威胁操作人员安全、器具严重破损、违反环保法规 的零件包装将被拒收。",
+   "sortOrder": 26,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 641,
+     "charCount": 36,
+     "exactText": "3.1.15 所有包装应便于运输、搬运、储存、配送、方便取用等物流过程和",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 679,
+     "charCount": 46,
+     "exactText": "生产过程，损害零件质量、威胁操作人员安全、器具严重破损、违反环保法规\n的零件包装将被拒收。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.1.16",
+   "title": "包装设计应配合智界公司",
+   "parentId": "c6fd18ce-9115-49a2-b95b-f655d456253d",
+   "content": "3.0 产品规划逐步体现智能化，如 RFID 技术、自动对接、AGV牵引、传输链等新技术运用。",
+   "sortOrder": 27,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 727,
+     "charCount": 18,
+     "exactText": "3.1.16 包装设计应配合智界公司",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.2",
+   "title": "包装开展流程",
+   "parentId": "f98c00a6-2095-4def-bc89-bc0f9b0032a0",
+   "content": "",
+   "sortOrder": 28,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 797,
+     "charCount": 10,
+     "exactText": "3.2 包装开展流程",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.2.1",
+   "title": "整车开发",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "P4 阶段前供应商应主动按智界公司《外协件包装标准要 求》规定提交《零件包装方案》至零部件物流部门。",
+   "sortOrder": 29,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 809,
+     "charCount": 10,
+     "exactText": "3.2.1 整车开发",
+     "status": "linked"
+    },
+    {
+     "page": 4,
+     "charStart": 820,
+     "charCount": 51,
+     "exactText": "P4 阶段前供应商应主动按智界公司《外协件包装标准要\n求》规定提交《零件包装方案》至零部件物流部门。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.2.2",
+   "title": "供应商所提交的包装方案经智界公司相关部门评审会签生效后",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "，智 界物流部门通知供应商在项目 P5 节点前完成器具样件制作，在规定时间内未完 成样件交付，智界物流部门将依据《采购主合同》相关条款给予经济考核。",
+   "sortOrder": 30,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "3.2.3",
+   "title": "VFF车试装供货包装需按照生效包装方案执行",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "，同时验证器具质量 防护、人机工程及小批量交付标准一致性。",
+   "sortOrder": 31,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 4,
+     "charStart": 1012,
+     "charCount": 30,
+     "exactText": "，同时验证器具质量\n防护、人机工程及小批量交付标准一致性。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.2.4",
+   "title": "项目",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "P6 节点前（PVS 阶段）供应商需按照物流部门核定的投入量完 成全部器具及塑料箱批量制作与投入，并通知智界公司物流部门包装工程师交 付确认，对不符标准要求的器具或塑料箱，供应商需立即整改，同时智界物流 部门将依据《采购主合同》相关条款给予经济考核。",
+   "sortOrder": 32,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "3.2.5",
+   "title": "供应商所供零件包装确认、采购制作、批量交付未按智界公司《包",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "装标准要求》和进度要求完成，智界将延迟其供货，并进行经济考核，考核标 准按1000元/次。",
+   "sortOrder": 33,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 139,
+     "charCount": 35,
+     "exactText": "3.2.5 供应商所供零件包装确认、采购制作、批量交付未按智界公司《包",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.2.6",
+   "title": "每个零件包装是唯一的",
+   "parentId": "47c850fa-df6e-4841-b46b-2e884c7ac551",
+   "content": "，供货过程中与智界确认包装方案不一致， 每次考核100元/次，由此引起一切后果由供应商承担。",
+   "sortOrder": 34,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 226,
+     "charCount": 16,
+     "exactText": "3.2.6 每个零件包装是唯一的",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3",
+   "title": "器具管理",
+   "parentId": "f98c00a6-2095-4def-bc89-bc0f9b0032a0",
+   "content": "",
+   "sortOrder": 35,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 293,
+     "charCount": 8,
+     "exactText": "3.3 器具管理",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.1",
+   "title": "供应商或物流公司应配合智界公司实施",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "LES 器具管理，发货时由看 板员打印《器具配送单》（一式三份：仓库联，出门凭证、供应商联），智界 公司各道口点货员接收《器具配送单》，对包装器具完好性、外标识是否符合 要求、数量及帐物相符性等进行验收，合格后在单据上签字确认，保留仓库 联，将数据录入 LES 系统或记录电子台账，若验收不合格，通知供应商/物流公 司现场进行整改，再次验收确认。如供应商或物流公司过程中没有执行 LES 器 具管理，每次考核100元。\n过程控制采取\"器具入出状态一致性\"为总体原则。对生产让步接 收的问题器具（包装不影响产品质量和人员操作安全的条件下给予让步接 收），由收货员在器具配送单上做好备注说明，同时并在器具上做好标识，空 箱下线后由供应商自行负责维修（铁制器具）或报废（塑料箱），对已做维护 标识器具但仍维护的，再次供货时将拒收。",
+   "sortOrder": 36,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 303,
+     "charCount": 23,
+     "exactText": "3.3.1 供应商或物流公司应配合智界公司实施",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 327,
+     "charCount": 62,
+     "exactText": "LES 器具管理，发货时由看\n板员打印《器具配送单》（一式三份：仓库联，出门凭证、供应商联），智界\n公司各道口点货员接收",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 384,
+     "charCount": 64,
+     "exactText": "点货员接收《器具配送单》，对包装器具完好性、外标识是否符合\n要求、数量及帐物相符性等进行验收，合格后在单据上签字确认，保留仓库",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 440,
+     "charCount": 62,
+     "exactText": "字确认，保留仓库\n联，将数据录入 LES 系统或记录电子台账，若验收不合格，通知供应商/物流公\n司现场进行整改，再次验收",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 619,
+     "charCount": 68,
+     "exactText": "，由收货员在器具配送单上做好备注说明，同时并在器具上做好标识，空\n箱下线后由供应商自行负责维修（铁制器具）或报废（塑料箱），对已做维护",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 675,
+     "charCount": 33,
+     "exactText": "废（塑料箱），对已做维护\n标识器具但仍维护的，再次供货时将拒收。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.3",
+   "title": "器具返还时由智界器具管理员开具《器具返还单》",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "， 返还器具数据 录入LES系统。",
+   "sortOrder": 37,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 710,
+     "charCount": 28,
+     "exactText": "3.3.3 器具返还时由智界器具管理员开具《器具返还单》",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.4",
+   "title": "供应商或物流公司编制包装器具出入月报表",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "，每月 28 日前将器具出 入月报表差异情况反馈至零部件物流部门器具管理员。",
+   "sortOrder": 38,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 760,
+     "charCount": 25,
+     "exactText": "3.3.4 供应商或物流公司编制包装器具出入月报表",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 785,
+     "charCount": 39,
+     "exactText": "，每月 28 日前将器具出\n入月报表差异情况反馈至零部件物流部门器具管理员。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.5",
+   "title": "供应商或物流公司应定期对现场器具进行盘点",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "，填写《供应商器具 盘点表》，盘点范围包括智界公司生产区域，供应商和物流公司内部区域，查 找器具管理漏洞，提升器具过程管控的有效性。",
+   "sortOrder": 39,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 826,
+     "charCount": 26,
+     "exactText": "3.3.5 供应商或物流公司应定期对现场器具进行盘点",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 852,
+     "charCount": 62,
+     "exactText": "，填写《供应商器具\n盘点表》，盘点范围包括智界公司生产区域，供应商和物流公司内部区域，查\n找器具管理漏洞，提升器具过程管",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 909,
+     "charCount": 11,
+     "exactText": "器具过程管控的有效性。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.6",
+   "title": "器具折旧",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "：铁制器具按6年折旧计；塑料器具按3年折旧计。",
+   "sortOrder": 40,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 922,
+     "charCount": 10,
+     "exactText": "3.3.6 器具折旧",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.7",
+   "title": "器具维修",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "：原则上，供应商器具半年进行一次全面检查和维修，日 常配送周转过程中发现器具损坏、锈蚀、脏污要及时隔离并维护，保证器具维 修期间的正常器具供货，异常情况及时通报智界公司协调处理。采用损坏、锈 蚀、脏污器具供货每次考核100元。",
+   "sortOrder": 41,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 5,
+     "charStart": 961,
+     "charCount": 10,
+     "exactText": "3.3.7 器具维修",
+     "status": "linked"
+    },
+    {
+     "page": 5,
+     "charStart": 971,
+     "charCount": 61,
+     "exactText": "：原则上，供应商器具半年进行一次全面检查和维修，日\n常配送周转过程中发现器具损坏、锈蚀、脏污要及时隔离并维护，保证器具维",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.8",
+   "title": "空器具返回",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "：空器具超过两小时未返还（根据零件供货单据到货时 间计算），智界公司从第 3 个小时开始收取仓储费，铁制器具按 10 元/小时/ 个，塑料箱按1元/小时/个。",
+   "sortOrder": 42,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 0,
+     "charCount": 11,
+     "exactText": "3.3.8 空器具返回",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 11,
+     "charCount": 56,
+     "exactText": "：空器具超过两小时未返还（根据零件供货单据到货时\n间计算），智界公司从第 3 个小时开始收取仓储费，铁制器具按",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.9",
+   "title": "供应商应严格核对智界公司开出《供应商工位器具返还单》相关内",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "容，对于返还数量与单据数量不一致及时反馈智界公司并跟踪相关原因，智界 公司每月邮件通知各供应商进行《供应商工位器具返还单》原始单据核对，对 单据遗失视为器具遗失，需在 1 个月内完成新器具增补工作，逾期按铁制器具 以2000元/只、料盒以100元/只考核。",
+   "sortOrder": 43,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 96,
+     "charCount": 35,
+     "exactText": "3.3.9 供应商应严格核对智界公司开出《供应商工位器具返还单》相关内",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 133,
+     "charCount": 70,
+     "exactText": "容，对于返还数量与单据数量不一致及时反馈智界公司并跟踪相关原因，智界\n公司每月邮件通知各供应商进行《供应商工位器具返还单》原始单据核对，对",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 189,
+     "charCount": 52,
+     "exactText": "器具返还单》原始单据核对，对\n单据遗失视为器具遗失，需在 1 个月内完成新器具增补工作，逾期按铁制器具",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.10",
+   "title": "供应商严禁占用、挪用其它供应商器具",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "，每发现占用、挪用其它供 应商料盒、器具使用罚以1000元/只。",
+   "sortOrder": 44,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 270,
+     "charCount": 24,
+     "exactText": "3.3.10 供应商严禁占用、挪用其它供应商器具",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "3.3.11",
+   "title": "对于恶意损坏、更改供应商容器标识",
+   "parentId": "d046d1bf-e4dc-4bc7-93fe-dd0b745983b6",
+   "content": "，一经查处按原器具造价10 倍罚款并对器具进行修复。",
+   "sortOrder": 45,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 331,
+     "charCount": 23,
+     "exactText": "3.3.11 对于恶意损坏、更改供应商容器标识",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第4条",
+   "title": "运输要求",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 46,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "4.1",
+   "title": "供应商运输车辆要求",
+   "parentId": "1e7d26ee-27d5-47d4-926d-138f84a1e6ff",
+   "content": "",
+   "sortOrder": 47,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 396,
+     "charCount": 13,
+     "exactText": "4.1 供应商运输车辆要求",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.1.1",
+   "title": "长途运输车辆要求采用全封闭厢式货车",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": "，整车或零担运输物料包装 必须为托盘化配载，整体打包，到货包装外观必须完好，无质量隐患。",
+   "sortOrder": 48,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 411,
+     "charCount": 23,
+     "exactText": "4.1.1 长途运输车辆要求采用全封闭厢式货车",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 434,
+     "charCount": 45,
+     "exactText": "，整车或零担运输物料包装\n必须为托盘化配载，整体打包，到货包装外观必须完好，无质量隐患。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.1.2",
+   "title": "供应商短驳运输车辆至智界物流道口车辆要求",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": ":",
+   "sortOrder": 49,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "4.1.3",
+   "title": "物流运输货车必须采用双飞翼式（7",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": ".2-12.5 m）货车，以保证产品 运输安全、产品质量防护要求和卸货需求，车厢门为双飞翼液压式电动开启， 便于零部件的装卸。",
+   "sortOrder": 50,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 510,
+     "charCount": 22,
+     "exactText": "4.1.3 物流运输货车必须采用双飞翼式（7",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 532,
+     "charCount": 54,
+     "exactText": ".2-12.5 m）货车，以保证产品\n运输安全、产品质量防护要求和卸货需求，车厢门为双飞翼液压式电动开启，",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 589,
+     "charCount": 8,
+     "exactText": "于零部件的装卸。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.1.4",
+   "title": "入厂物流运输车辆颜色统一为蓝色",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": "；车厢内外必须保持干净整洁， 不得粘贴广告及其他汽车厂商标志等信息，每辆运输车需配备灭火器等辅助器 材。",
+   "sortOrder": 51,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 599,
+     "charCount": 21,
+     "exactText": "4.1.4 入厂物流运输车辆颜色统一为蓝色",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 620,
+     "charCount": 54,
+     "exactText": "；车厢内外必须保持干净整洁，\n不得粘贴广告及其他汽车厂商标志等信息，每辆运输车需配备灭火器等辅助器\n材。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.4.5",
+   "title": "入厂物流运输车辆服务年限不得超过",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": "8 年，超过规定年限的运输车 辆不得进入安徽智界新能源汽车有限公司厂区。",
+   "sortOrder": 52,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 676,
+     "charCount": 22,
+     "exactText": "4.4.5 入厂物流运输车辆服务年限不得超过",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 699,
+     "charCount": 37,
+     "exactText": "8 年，超过规定年限的运输车\n辆不得进入安徽智界新能源汽车有限公司厂区。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.1.6",
+   "title": "物流运输车辆每年必须提供车辆行驶证、道路运输证（供应商自有",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": "车辆除外）、二级维护卡及车辆上线检测合格的证明，确保车辆证件有效性， 购买车辆的相关保险(交强险、商业险≥50 万)，所有车辆证件须符合国家道路 运输管理规定要求。",
+   "sortOrder": 53,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 738,
+     "charCount": 35,
+     "exactText": "4.1.6 物流运输车辆每年必须提供车辆行驶证、道路运输证（供应商自有",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 775,
+     "charCount": 56,
+     "exactText": "车辆除外）、二级维护卡及车辆上线检测合格的证明，确保车辆证件有效性，\n购买车辆的相关保险(交强险、商业险≥50",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 832,
+     "charCount": 27,
+     "exactText": "万)，所有车辆证件须符合国家道路\n运输管理规定要求。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.1.7",
+   "title": "自配送供应商或物流公司在供货前需至零部件物流部门办理车辆入",
+   "parentId": "6d98c223-8798-4978-9085-c879ea41b83e",
+   "content": "厂证件，方可运输配送至道口。",
+   "sortOrder": 54,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 861,
+     "charCount": 35,
+     "exactText": "4.1.7 自配送供应商或物流公司在供货前需至零部件物流部门办理车辆入",
+     "status": "linked"
+    },
+    {
+     "page": 6,
+     "charStart": 898,
+     "charCount": 14,
+     "exactText": "厂证件，方可运输配送至道口。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.2",
+   "title": "驾驶员要求",
+   "parentId": "1e7d26ee-27d5-47d4-926d-138f84a1e6ff",
+   "content": "",
+   "sortOrder": 55,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 914,
+     "charCount": 9,
+     "exactText": "4.2 驾驶员要求",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.2.1",
+   "title": "驾驶员驾龄三年以上",
+   "parentId": "20720542-3bea-4ce3-9e45-0c7d5d57e9b6",
+   "content": "，年龄≤60岁，必须取得货车从业资格证。",
+   "sortOrder": 56,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 6,
+     "charStart": 925,
+     "charCount": 15,
+     "exactText": "4.2.1 驾驶员驾龄三年以上",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.2.2",
+   "title": "从业人员必须购买人身意外伤害保险",
+   "parentId": "20720542-3bea-4ce3-9e45-0c7d5d57e9b6",
+   "content": "。",
+   "sortOrder": 57,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "4.3",
+   "title": "厂区车辆行驶安全",
+   "parentId": "1e7d26ee-27d5-47d4-926d-138f84a1e6ff",
+   "content": "",
+   "sortOrder": 58,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 0,
+     "charCount": 12,
+     "exactText": "4.3 厂区车辆行驶安全",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.3.1",
+   "title": "驾驶车辆应遵守智界公司交通安全标志的指引",
+   "parentId": "230d4430-5f47-4715-898c-30666ec73b1b",
+   "content": "，禁止疲劳、酒后、 超载、超限及无证驾驶，行驶途中严格按照标志规定时速行驶，主厂区道路不 得超过 30 公里/小时，次干道不得超过 20 公里/小时，行驶至路口、施工和复 杂路段行车主动减速避让行人和车辆，遇商品车队时应主动避让，禁止穿插、 超越等行为。",
+   "sortOrder": 59,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 14,
+     "charCount": 26,
+     "exactText": "4.3.1 驾驶车辆应遵守智界公司交通安全标志的指引",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 40,
+     "charCount": 53,
+     "exactText": "，禁止疲劳、酒后、\n超载、超限及无证驾驶，行驶途中严格按照标志规定时速行驶，主厂区道路不\n得超过 30",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 97,
+     "charCount": 66,
+     "exactText": "小时，次干道不得超过 20 公里/小时，行驶至路口、施工和复\n杂路段行车主动减速避让行人和车辆，遇商品车队时应主动避让，禁止穿插、",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 153,
+     "charCount": 18,
+     "exactText": "主动避让，禁止穿插、\n超越等行为。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.3.2",
+   "title": "车辆停驶时应停放在指定位置或场所",
+   "parentId": "230d4430-5f47-4715-898c-30666ec73b1b",
+   "content": "，不得阻碍消防通道、出入 口，禁止乱停乱放。",
+   "sortOrder": 60,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 173,
+     "charCount": 22,
+     "exactText": "4.3.2 车辆停驶时应停放在指定位置或场所",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 195,
+     "charCount": 23,
+     "exactText": "，不得阻碍消防通道、出入\n口，禁止乱停乱放。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.3.3",
+   "title": "服从智界公司各级安全管理单位的检查及违章行为教育、纠正",
+   "parentId": "230d4430-5f47-4715-898c-30666ec73b1b",
+   "content": "，情 节严重或屡教不改的将取消其进厂资格。",
+   "sortOrder": 61,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 220,
+     "charCount": 33,
+     "exactText": "4.3.3 服从智界公司各级安全管理单位的检查及违章行为教育、纠正",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 253,
+     "charCount": 22,
+     "exactText": "，情\n节严重或屡教不改的将取消其进厂资格。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.3.4",
+   "title": "对于化学品、油料和危险品的运输须使用专用车辆",
+   "parentId": "230d4430-5f47-4715-898c-30666ec73b1b",
+   "content": "，装载易燃易爆 化学品时必须经公安部门批准，按国家规定的要求运输，具备必要的安全措施 （如：悬挂明显的警示标志）。",
+   "sortOrder": 62,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 277,
+     "charCount": 28,
+     "exactText": "4.3.4 对于化学品、油料和危险品的运输须使用专用车辆",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 305,
+     "charCount": 59,
+     "exactText": "，装载易燃易爆\n化学品时必须经公安部门批准，按国家规定的要求运输，具备必要的安全措施\n（如：悬挂明显的警示标志）。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "4.3.5",
+   "title": "对于车辆不符合智界公司车辆标准要求",
+   "parentId": "230d4430-5f47-4715-898c-30666ec73b1b",
+   "content": "，智界公司有权拒绝进入智 界厂区，造成一切后果由供应商承担，对于违规车辆和人员根据实际情况给予 通报和经济处罚。",
+   "sortOrder": 63,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 366,
+     "charCount": 23,
+     "exactText": "4.3.5 对于车辆不符合智界公司车辆标准要求",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 389,
+     "charCount": 58,
+     "exactText": "，智界公司有权拒绝进入智\n界厂区，造成一切后果由供应商承担，对于违规车辆和人员根据实际情况给予\n通报和经济处罚。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第5条",
+   "title": "中转仓储要求",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 64,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "5.1",
+   "title": "距离智界公司",
+   "parentId": "beb6a866-0860-45ab-b61d-256b31d31faf",
+   "content": "5 公里以上供应商均要求进入到智界公司指定的第三方 物流公司进行存储、配送，小于 5 公里的非排序供货商也需进入智界公司指定 的第三方的物流公司进行配送，与智界公司指定第三方物流签定物流仓储协 议。",
+   "sortOrder": 65,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 463,
+     "charCount": 10,
+     "exactText": "5.1 距离智界公司",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 474,
+     "charCount": 63,
+     "exactText": "5 公里以上供应商均要求进入到智界公司指定的第三方\n物流公司进行存储、配送，小于 5 公里的非排序供货商也需进入智界公司指定",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 530,
+     "charCount": 46,
+     "exactText": "入智界公司指定\n的第三方的物流公司进行配送，与智界公司指定第三方物流签定物流仓储协\n议。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "5.2",
+   "title": "原则上",
+   "parentId": "beb6a866-0860-45ab-b61d-256b31d31faf",
+   "content": "，结合供应商的路程及智界公司的生产安排，各地区供应商中 转库的存储周期规定如下：",
+   "sortOrder": 66,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 578,
+     "charCount": 7,
+     "exactText": "5.2 原则上",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 585,
+     "charCount": 41,
+     "exactText": "，结合供应商的路程及智界公司的生产安排，各地区供应商中\n转库的存储周期规定如下：",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "5.2.1",
+   "title": "每种零件具体存储周期及库存需与零部件物流部门确定",
+   "parentId": "953b1292-1d73-4ad2-b552-ee0244f53956",
+   "content": "。",
+   "sortOrder": 67,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "5.2.2",
+   "title": "如果零件最小包装容量使用时间超过上述规定",
+   "parentId": "953b1292-1d73-4ad2-b552-ee0244f53956",
+   "content": "，则以最小包装为 准。",
+   "sortOrder": 68,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 661,
+     "charCount": 26,
+     "exactText": "5.2.2 如果零件最小包装容量使用时间超过上述规定",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 687,
+     "charCount": 12,
+     "exactText": "，则以最小包装为\n准。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "5.2.3",
+   "title": "对于指定专用中转库的车型或机型",
+   "parentId": "953b1292-1d73-4ad2-b552-ee0244f53956",
+   "content": "，必须按指定的中转库要求存 储。对于通用零件，应按照物流部确认的供货物流方案执行。",
+   "sortOrder": 69,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 701,
+     "charCount": 21,
+     "exactText": "5.2.3 对于指定专用中转库的车型或机型",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 722,
+     "charCount": 42,
+     "exactText": "，必须按指定的中转库要求存\n储。对于通用零件，应按照物流部确认的供货物流方案执行。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "5.3",
+   "title": "为便于统一管理",
+   "parentId": "beb6a866-0860-45ab-b61d-256b31d31faf",
+   "content": "，智界公司不允许（除有特殊质量、存取要求）供应 商在芜湖自己设立中转库，由此而产生的不便或费用增加由供应商自己承担。",
+   "sortOrder": 70,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 766,
+     "charCount": 11,
+     "exactText": "5.3 为便于统一管理",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 777,
+     "charCount": 59,
+     "exactText": "，智界公司不允许（除有特殊质量、存取要求）供应\n商在芜湖自己设立中转库，由此而产生的不便或费用增加由供应商自己承担。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第6条",
+   "title": "零件需求计划",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 71,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "6.1",
+   "title": "供应商应按照智界公司的零件需求计划来组织和安排自己的生产和物",
+   "parentId": "e12e33dc-8486-4e99-a0cc-c46465e7cff1",
+   "content": "料准备工作。",
+   "sortOrder": 72,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 7,
+     "charStart": 852,
+     "charCount": 34,
+     "exactText": "6.1 供应商应按照智界公司的零件需求计划来组织和安排自己的生产和物",
+     "status": "linked"
+    },
+    {
+     "page": 7,
+     "charStart": 888,
+     "charCount": 6,
+     "exactText": "料准备工作。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "6.2",
+   "title": "外地供应商按照零件需求计划规定的到货时间和数量",
+   "parentId": "e12e33dc-8486-4e99-a0cc-c46465e7cff1",
+   "content": ",供货到指定的中 转仓库。",
+   "sortOrder": 73,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 0,
+     "charCount": 27,
+     "exactText": "6.2 外地供应商按照零件需求计划规定的到货时间和数量",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 27,
+     "charCount": 14,
+     "exactText": ",供货到指定的中\n转仓库。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "6.3",
+   "title": "供应商须向智界公司申请",
+   "parentId": "e12e33dc-8486-4e99-a0cc-c46465e7cff1",
+   "content": "SCM 的用户登陆权限，并每日登陆查看相关 的信息。",
+   "sortOrder": 74,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 43,
+     "charCount": 15,
+     "exactText": "6.3 供应商须向智界公司申请",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 59,
+     "charCount": 27,
+     "exactText": "SCM 的用户登陆权限，并每日登陆查看相关\n的信息。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "6.4",
+   "title": "智界公司零件需求计划",
+   "parentId": "e12e33dc-8486-4e99-a0cc-c46465e7cff1",
+   "content": "：",
+   "sortOrder": 75,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "6.4.1",
+   "title": "需求计划",
+   "parentId": "721f1845-2c6a-4197-935d-e5cd93a118dc",
+   "content": "：智界公司采购部门依据生产计划进行物料分解，结合供 货需求，制定采购订单，每月 25-28 日将于 SCM 网进行发布，供应商可自行登 陆自己用户进行查看，国际 KD 订单是根据国际需求进行制定和发布的，因此时 间不确定，供应商需在 SCM 网页上进行订单确认，如遇异常不能保障须以书面 形式通知智界公司；",
+   "sortOrder": 76,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 105,
+     "charCount": 10,
+     "exactText": "6.4.1 需求计划",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 115,
+     "charCount": 54,
+     "exactText": "：智界公司采购部门依据生产计划进行物料分解，结合供\n货需求，制定采购订单，每月 25-28 日将于 SCM",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 171,
+     "charCount": 51,
+     "exactText": "进行发布，供应商可自行登\n陆自己用户进行查看，国际 KD 订单是根据国际需求进行制定和发布的，因此时",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 228,
+     "charCount": 44,
+     "exactText": "，供应商需在 SCM 网页上进行订单确认，如遇异常不能保障须以书面\n形式通知智界公司；",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "6.4.2",
+   "title": "补充计划",
+   "parentId": "721f1845-2c6a-4197-935d-e5cd93a118dc",
+   "content": "：如果发生计划调整或少件、错件、坏件等情况，智界公 司需要及时对订单进行补充与调整。",
+   "sortOrder": 77,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 274,
+     "charCount": 10,
+     "exactText": "6.4.2 补充计划",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 284,
+     "charCount": 43,
+     "exactText": "：如果发生计划调整或少件、错件、坏件等情况，智界公\n司需要及时对订单进行补充与调整。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "6.5",
+   "title": "供应商必须建立计划机动能力",
+   "parentId": "e12e33dc-8486-4e99-a0cc-c46465e7cff1",
+   "content": "，并保有适当规模的周转库存以满足智 界公司生产以外的需求和生产周转库存。",
+   "sortOrder": 78,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 329,
+     "charCount": 17,
+     "exactText": "6.5 供应商必须建立计划机动能力",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 346,
+     "charCount": 37,
+     "exactText": "，并保有适当规模的周转库存以满足智\n界公司生产以外的需求和生产周转库存。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第7条",
+   "title": "供货方式",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 79,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "7.1",
+   "title": "本地直供供应商至智界公司收货地点供货模式",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "：",
+   "sortOrder": 80,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "7.1.1",
+   "title": "排序(JIS)供货",
+   "parentId": "2cb271ce-a3f7-490f-8151-798d4a4c8cac",
+   "content": "：供应商按照整车生产顺序排列送货到智界公司道 口。",
+   "sortOrder": 81,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "7.2",
+   "title": "指定第三方物流公司至智界公司收货地点有三种供货方式",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": ":",
+   "sortOrder": 82,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "7.2.1",
+   "title": "看板供货(KANBAN)",
+   "parentId": "bce5f5a6-ae71-402b-bd32-0c22bbc0df1c",
+   "content": "：按智界公司电子看板形式发出的要货需求送货 到智界公司指定道口。",
+   "sortOrder": 83,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 499,
+     "charCount": 18,
+     "exactText": "7.2.1 看板供货(KANBAN)",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 517,
+     "charCount": 33,
+     "exactText": "：按智界公司电子看板形式发出的要货需求送货\n到智界公司指定道口。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.1.1",
+   "title": "排序(JIS)供货",
+   "parentId": "bce5f5a6-ae71-402b-bd32-0c22bbc0df1c",
+   "content": "：供应商按照整车生产顺序排列送货到智界公司道 口。",
+   "sortOrder": 84,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "7.2.3",
+   "title": "需求计划供货",
+   "parentId": "bce5f5a6-ae71-402b-bd32-0c22bbc0df1c",
+   "content": ":对于新车型或批量小的车型物料采用电话或计划报缺 到货模式。",
+   "sortOrder": 85,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 595,
+     "charCount": 12,
+     "exactText": "7.2.3 需求计划供货",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 607,
+     "charCount": 31,
+     "exactText": ":对于新车型或批量小的车型物料采用电话或计划报缺\n到货模式。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.3",
+   "title": "供应商至中转库物流配送主要依据",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "LES 系统计划需求数量和时间进行 配送。",
+   "sortOrder": 86,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 640,
+     "charCount": 19,
+     "exactText": "7.3 供应商至中转库物流配送主要依据",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 660,
+     "charCount": 22,
+     "exactText": "LES 系统计划需求数量和时间进行\n配送。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.4",
+   "title": "未能按需求计划和看板供货要求送货到指定收货地点",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "，未按时间到达 造成智界生产线停线按采购合同相关条例执行。",
+   "sortOrder": 87,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 684,
+     "charCount": 27,
+     "exactText": "7.4 未能按需求计划和看板供货要求送货到指定收货地点",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 711,
+     "charCount": 30,
+     "exactText": "，未按时间到达\n造成智界生产线停线按采购合同相关条例执行。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.5",
+   "title": "配合智界公司零部件物流部门对零件供货方式优化",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "，同时供应商也可 提出相应的优化意见。",
+   "sortOrder": 88,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 743,
+     "charCount": 26,
+     "exactText": "7.5 配合智界公司零部件物流部门对零件供货方式优化",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 769,
+     "charCount": 20,
+     "exactText": "，同时供应商也可\n提出相应的优化意见。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.6",
+   "title": "为降低整个供货运输、仓储费用",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "，应积极配合、参与智界公司循环取 货项目。",
+   "sortOrder": 89,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 8,
+     "charStart": 791,
+     "charCount": 18,
+     "exactText": "7.6 为降低整个供货运输、仓储费用",
+     "status": "linked"
+    },
+    {
+     "page": 8,
+     "charStart": 809,
+     "charCount": 22,
+     "exactText": "，应积极配合、参与智界公司循环取\n货项目。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "7.7",
+   "title": "非本地供应商原则上应选择智界公司指定的第三方物流公司进行仓",
+   "parentId": "dbf94bd9-c5bb-4a94-996d-7915d342d582",
+   "content": "储、配送和交货。在循环取货项目规划路线之内的供应商，进行取货后交付至 第三方物流公司；芜湖本地供应商，在循环取货项目规划路线之内，进行取货 后在指定时间交付至指定道口；排序供货供应商，组织车辆在指定时间自送至 指定道口；非取货、排序供货供应商，进入智界公司指定的第三方物流公司进 行仓储、配送和交货。",
+   "sortOrder": 90,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 0,
+     "charCount": 33,
+     "exactText": "7.7 非本地供应商原则上应选择智界公司指定的第三方物流公司进行仓",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 35,
+     "charCount": 70,
+     "exactText": "储、配送和交货。在循环取货项目规划路线之内的供应商，进行取货后交付至\n第三方物流公司；芜湖本地供应商，在循环取货项目规划路线之内，进行取货",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 91,
+     "charCount": 62,
+     "exactText": "货项目规划路线之内，进行取货\n后在指定时间交付至指定道口；排序供货供应商，组织车辆在指定时间自送至\n指定道口；非取货、排",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 148,
+     "charCount": 41,
+     "exactText": "非取货、排序供货供应商，进入智界公司指定的第三方物流公司进\n行仓储、配送和交货。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第8条",
+   "title": "供货信息系统",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 91,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "8.1",
+   "title": "本地直供供应商排序零件发至智界公司收货地点信息系统",
+   "parentId": "e7aff22a-6ea0-448a-97b0-0ab1e240ed08",
+   "content": "。",
+   "sortOrder": 92,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "8.1.1",
+   "title": "本地直供供应商须登陆智界公司的",
+   "parentId": "9749de6d-3f50-44fb-9fd8-c31ff199aadf",
+   "content": "LES 物流执行系统，具体网址： https://whc2-les.mychery.com/#/login。供应商登陆 LES 系统在\"排序配送 单接收\"界面打印排序单据，按《***零部件排序协议》进行分拣、配送。",
+   "sortOrder": 93,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 237,
+     "charCount": 21,
+     "exactText": "8.1.1 本地直供供应商须登陆智界公司的",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 259,
+     "charCount": 60,
+     "exactText": "LES 物流执行系统，具体网址：\nhttps://whc2-les.mychery.com/#/login。供应商登陆",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "8.2",
+   "title": "指定第三方物流公司至智界公司收货地点信息系统",
+   "parentId": "e7aff22a-6ea0-448a-97b0-0ab1e240ed08",
+   "content": "。",
+   "sortOrder": 94,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "8.2.1",
+   "title": "看板供货(KANBAN)",
+   "parentId": "5f0240af-1f76-4a80-8144-e57085305064",
+   "content": "，物流公司登陆 LES 系统后，（具体网址： https://whc2-les.mychery.com/#/login。）在\"看板配送单接收\"界面打印 配送单据进行分拣配送，并在指定时间将指定零件送至制定道口。",
+   "sortOrder": 95,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "8.2.2",
+   "title": "排序(JIS)供货",
+   "parentId": "5f0240af-1f76-4a80-8144-e57085305064",
+   "content": "，物流公司登陆 LES 系统后，（具体网址：\nhttps://whc2-les.mychery.com/#/login。）供应商登陆 LES 系统在\"排序配 送单接收\"界面打印排序单据，按《***零部件排序协议》进行分拣、配送。2",
+   "sortOrder": 96,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 526,
+     "charCount": 15,
+     "exactText": "8.2.2 排序(JIS)供货",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 541,
+     "charCount": 67,
+     "exactText": "，物流公司登陆 LES 系统后，（具体网址：\nhttps://whc2-les.mychery.com/#/login。）供应商登陆",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "8.2.3",
+   "title": "需求计划供货",
+   "parentId": "5f0240af-1f76-4a80-8144-e57085305064",
+   "content": ": 须定时登陆SRM（具体网址：\nhttps://srm.mychery.com/#/login）和EDI网页（具体网址：\nhttps://edi.mychery.com/login?redirect=/index），对相关信息进行记录， 风险协同、预警，分层级物料需求；",
+   "sortOrder": 97,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 660,
+     "charCount": 12,
+     "exactText": "8.2.3 需求计划供货",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 731,
+     "charCount": 65,
+     "exactText": "（具体网址：\nhttps://edi.mychery.com/login?redirect=/index），对相关信息进行记录，",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 787,
+     "charCount": 27,
+     "exactText": "相关信息进行记录，\n风险协同、预警，分层级物料需求；",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "8.3",
+   "title": "供应商至物流系统",
+   "parentId": "e7aff22a-6ea0-448a-97b0-0ab1e240ed08",
+   "content": "，登陆 LES 系统后（具体网址：https://whc2les.mychery.com/#/login。）在\"看板配送单接收\"界面打印配送单据进行分 拣配送至物流公司。",
+   "sortOrder": 98,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 816,
+     "charCount": 12,
+     "exactText": "8.3 供应商至物流系统",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "第 9 条 零部件储运仓储费",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 99,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "9.1",
+   "title": "供应商进入智界公司指定物流公司需签订物流仓储协议",
+   "parentId": "43ba10d7-6595-4524-938b-313a896e307a",
+   "content": "，涉及费用主\n要为仓储费和配送费，具体见《智界零部件仓储协议》。",
+   "sortOrder": 100,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 936,
+     "charCount": 28,
+     "exactText": "9.1 供应商进入智界公司指定物流公司需签订物流仓储协议",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 964,
+     "charCount": 33,
+     "exactText": "，涉及费用主\n要为仓储费和配送费，具体见《智界零部件仓储协议》。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第10条",
+   "title": "缺错件管理要求",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 101,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "10.1",
+   "title": "供应商出厂必须做好检验",
+   "parentId": "58a8eca7-cc0b-45f3-aa3a-055a6cac4e07",
+   "content": "，应保证包装数量、实物数量与单据一致， 单据填写要规范、清晰、正确，杜绝混装、内外包装量与单据不匹配等等，否 则智界公司或3PL有权拒收，造成损失由供应商承担。",
+   "sortOrder": 102,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 1015,
+     "charCount": 16,
+     "exactText": "10.1 供应商出厂必须做好检验",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 1031,
+     "charCount": 55,
+     "exactText": "，应保证包装数量、实物数量与单据一致，\n单据填写要规范、清晰、正确，杜绝混装、内外包装量与单据不匹配等等，否",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "10.2",
+   "title": "供应商直送或委托智界非指定的",
+   "parentId": "58a8eca7-cc0b-45f3-aa3a-055a6cac4e07",
+   "content": "3PL 配送至智界公司，发生缺错件， 由供应商承担。",
+   "sortOrder": 103,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 9,
+     "charStart": 1117,
+     "charCount": 19,
+     "exactText": "10.2 供应商直送或委托智界非指定的",
+     "status": "linked"
+    },
+    {
+     "page": 9,
+     "charStart": 1137,
+     "charCount": 27,
+     "exactText": "3PL 配送至智界公司，发生缺错件，\n由供应商承担。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "10.3",
+   "title": "供应商委托智界指定的",
+   "parentId": "58a8eca7-cc0b-45f3-aa3a-055a6cac4e07",
+   "content": "3PL 配送至智界公司，因 3PL 换包等操作原因 发生的缺错件由 3PL 承担，同时供应商送货至 3PL 发生的缺、错均按缺错件管 理要求进行考核。",
+   "sortOrder": 104,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 10,
+     "charStart": 0,
+     "charCount": 15,
+     "exactText": "10.3 供应商委托智界指定的",
+     "status": "linked"
+    },
+    {
+     "page": 10,
+     "charStart": 16,
+     "charCount": 54,
+     "exactText": "3PL 配送至智界公司，因 3PL 换包等操作原因\n发生的缺错件由 3PL 承担，同时供应商送货至 3PL",
+     "status": "linked"
+    },
+    {
+     "page": 10,
+     "charStart": 72,
+     "charCount": 21,
+     "exactText": "生的缺、错均按缺错件管\n理要求进行考核。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "10.4",
+   "title": "处罚方式",
+   "parentId": "58a8eca7-cc0b-45f3-aa3a-055a6cac4e07",
+   "content": "：缺件按所缺零部件总金额（含税价）的 5 倍罚款，错件按 500元/件考核。",
+   "sortOrder": 105,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 10,
+     "charStart": 95,
+     "charCount": 9,
+     "exactText": "10.4 处罚方式",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第11条",
+   "title": "联系人",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 106,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "10.1",
+   "title": "为顺利完成供货及其它相关业务",
+   "parentId": "6317a963-de48-4c8e-a3bf-f91b4d796b81",
+   "content": "，供应商须为物流部各相关科室安排 指定的联系人，并保证在智界公司工作时间随时可以保持联系。",
+   "sortOrder": 107,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 10,
+     "charStart": 158,
+     "charCount": 19,
+     "exactText": "10.1 为顺利完成供货及其它相关业务",
+     "status": "linked"
+    },
+    {
+     "page": 10,
+     "charStart": 177,
+     "charCount": 46,
+     "exactText": "，供应商须为物流部各相关科室安排\n指定的联系人，并保证在智界公司工作时间随时可以保持联系。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "10.2",
+   "title": "联系人或联系方式一旦变更",
+   "parentId": "6317a963-de48-4c8e-a3bf-f91b4d796b81",
+   "content": "，应立即通知智界公司相关科室新的联系 人及联系方式。",
+   "sortOrder": 108,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 10,
+     "charStart": 225,
+     "charCount": 17,
+     "exactText": "10.2 联系人或联系方式一旦变更",
+     "status": "linked"
+    },
+    {
+     "page": 10,
+     "charStart": 242,
+     "charCount": 27,
+     "exactText": "，应立即通知智界公司相关科室新的联系\n人及联系方式。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "第12条",
+   "title": "应急预案",
+   "parentId": null,
+   "content": "供应商须充分考虑供货物流过程中各个环节可能会发生的将影响供货正常 完成的因素，并据此制定有效的应急方案以保证奇现瑞公司的生产。在需要的 情况下，应急预案须经过智界公司的认可。",
+   "sortOrder": 109,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "附件7-1",
+   "title": "智界公司车辆要求规范",
+   "parentId": null,
+   "content": "主要适用于供应商自行配送至智界公司",
+   "sortOrder": 110,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 19,
+     "charCount": 17,
+     "exactText": "主要适用于供应商自行配送至智界公司",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1",
+   "title": "运输车辆要求",
+   "parentId": "0413acc0-75b9-427b-86d4-1063c17fb3d3",
+   "content": "",
+   "sortOrder": 111,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 38,
+     "charCount": 8,
+     "exactText": "1 运输车辆要求",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.1",
+   "title": "物流运输用货车必须采用双飞翼式厢式货车",
+   "parentId": "0413acc0-75b9-427b-86d4-1063c17fb3d3",
+   "content": "，以保证产品运输中的安 全和产品质量防护要求（图示）；",
+   "sortOrder": 112,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 48,
+     "charCount": 23,
+     "exactText": "1.1 物流运输用货车必须采用双飞翼式厢式货车",
+     "status": "linked"
+    },
+    {
+     "page": 11,
+     "charStart": 71,
+     "charCount": 28,
+     "exactText": "，以保证产品运输中的安\n全和产品质量防护要求（图示）；",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2",
+   "title": "运输车辆尺寸颜色要求",
+   "parentId": "94e93559-fd66-4ef4-9176-af41b3e43d79",
+   "content": "",
+   "sortOrder": 113,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 111,
+     "charCount": 12,
+     "exactText": "2 运输车辆尺寸颜色要求",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.1",
+   "title": "货车车厢长度必须在（7",
+   "parentId": "0413acc0-75b9-427b-86d4-1063c17fb3d3",
+   "content": ".2-12.5 m）米之间。",
+   "sortOrder": 114,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 125,
+     "charCount": 15,
+     "exactText": "2.1 货车车厢长度必须在（7",
+     "status": "linked"
+    },
+    {
+     "page": 11,
+     "charStart": 140,
+     "charCount": 14,
+     "exactText": ".2-12.5 m）米之间。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.2",
+   "title": "公司内部部分区域有限高要求",
+   "parentId": "0413acc0-75b9-427b-86d4-1063c17fb3d3",
+   "content": "，物流运输车辆的总高度不得高于 4.5 米。",
+   "sortOrder": 115,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 11,
+     "charStart": 156,
+     "charCount": 17,
+     "exactText": "2.2 公司内部部分区域有限高要求",
+     "status": "linked"
+    },
+    {
+     "page": 11,
+     "charStart": 173,
+     "charCount": 23,
+     "exactText": "，物流运输车辆的总高度不得高于 4.5\n米。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.3",
+   "title": "运输车辆要求车厢为红色",
+   "parentId": "0413acc0-75b9-427b-86d4-1063c17fb3d3",
+   "content": "。",
+   "sortOrder": 116,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "附件 8",
+   "title": "附件 8",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 117,
+   "suspicious": true,
+   "anchors": []
+  },
+  {
+   "number": "",
+   "title": "供应商备件包装方案",
+   "parentId": null,
+   "content": "供应商包装分为一般供货包装和备件专用包装",
+   "sortOrder": 118,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 7,
+     "charCount": 9,
+     "exactText": "供应商备件包装方案",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 19,
+     "charCount": 20,
+     "exactText": "供应商包装分为一般供货包装和备件专用包装",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1",
+   "title": "一般供货包装",
+   "parentId": "49be9d27-d1c7-41bb-bd30-161fee08f605",
+   "content": "：是指供应商提供的出厂到智界公司备件库房的用于零件 运输和防护的包装。一般供货包装可以是纸箱、木箱或器具等，但必须要符合 以下基本要求：",
+   "sortOrder": 119,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 49,
+     "charCount": 61,
+     "exactText": "：是指供应商提供的出厂到智界公司备件库房的用于零件\n运输和防护的包装。一般供货包装可以是纸箱、木箱或器具等，但必须要符合",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 105,
+     "charCount": 14,
+     "exactText": "必须要符合\n以下基本要求：",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.1",
+   "title": "防护要求",
+   "parentId": "49be9d27-d1c7-41bb-bd30-161fee08f605",
+   "content": "：所有零件必须做好基本防护（如：防锈、防尘、防划伤、 防磕碰等）；",
+   "sortOrder": 120,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 121,
+     "charCount": 8,
+     "exactText": "1.1 防护要求",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 129,
+     "charCount": 34,
+     "exactText": "：所有零件必须做好基本防护（如：防锈、防尘、防划伤、\n防磕碰等）；",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "1.2",
+   "title": "标识要求",
+   "parentId": "49be9d27-d1c7-41bb-bd30-161fee08f605",
+   "content": "：标识内容必须清晰体现零件号、零件中文名称、数量、生 产日期、供货方、供货方代码等信息。",
+   "sortOrder": 121,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 165,
+     "charCount": 8,
+     "exactText": "1.2 标识要求",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 173,
+     "charCount": 45,
+     "exactText": "：标识内容必须清晰体现零件号、零件中文名称、数量、生\n产日期、供货方、供货方代码等信息。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2",
+   "title": "备件专用包装",
+   "parentId": "27a58f8d-039c-4c6f-96f6-3e917eb26cb4",
+   "content": "：是指供应商提供符合智界备件对外销售包装要求，可直 接用于对终端销售的包装。针对三滤、安全件、成套件和国家规定必须供应商 出厂包装的零件，或者经双方约定向智界公司提供备件专用包装的零件，需要 供应商提供的备件专用包装，备件专用包装必须符合以下要求：",
+   "sortOrder": 122,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 228,
+     "charCount": 61,
+     "exactText": "：是指供应商提供符合智界备件对外销售包装要求，可直\n接用于对终端销售的包装。针对三滤、安全件、成套件和国家规定必须供应商",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 284,
+     "charCount": 62,
+     "exactText": "必须供应商\n出厂包装的零件，或者经双方约定向智界公司提供备件专用包装的零件，需要\n供应商提供的备件专用包装，备件专用包装",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 341,
+     "charCount": 14,
+     "exactText": "件专用包装必须符合以下要求：",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.1",
+   "title": "标签要求",
+   "parentId": "49be9d27-d1c7-41bb-bd30-161fee08f605",
+   "content": "：标签为 60*60mm 的玻璃卡不干胶，标签内容必须体现零件 号、零件中文名称、零件英文名称、条形码、数量、产品执行的标准号、厂家 代码、生产日期，合格证字样、生产厂家名称、生产厂家地址、MADE IN CHINA 和国家法律规定的相关信息等内容。下图为标签效果图，不包含国家法律规定 应体现的相关信息内容，厂家可根据零件相关国家法规要求自行添加。",
+   "sortOrder": 123,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 357,
+     "charCount": 8,
+     "exactText": "2.1 标签要求",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 365,
+     "charCount": 67,
+     "exactText": "：标签为 60*60mm 的玻璃卡不干胶，标签内容必须体现零件\n号、零件中文名称、零件英文名称、条形码、数量、产品执行的标准号、厂家",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 421,
+     "charCount": 54,
+     "exactText": "产品执行的标准号、厂家\n代码、生产日期，合格证字样、生产厂家名称、生产厂家地址、MADE IN CHINA",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 478,
+     "charCount": 61,
+     "exactText": "国家法律规定的相关信息等内容。下图为标签效果图，不包含国家法律规定\n应体现的相关信息内容，厂家可根据零件相关国家法规要求",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 534,
+     "charCount": 10,
+     "exactText": "家法规要求自行添加。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "标签效果图：",
+   "parentId": null,
+   "content": "",
+   "sortOrder": 124,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 641,
+     "charCount": 6,
+     "exactText": "标签效果图：",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.2",
+   "title": "材质要求",
+   "parentId": "656ad1b7-ad7c-42b0-b814-6d1d6a52276f",
+   "content": "ü 纸箱技术标准要求：\n体积范围 大于或等于 0.03 立方米的纸箱 小于 0.03 立方米的纸箱\n条码为零件号的 128 码表现 形式，⾼度不低于10mm\n\n| 双瓦楞纸板(面纸为B级以上)   | 单瓦楞纸板(面纸为B级以上)                   | 材料                       |\n|------------------|----------------------------------|--------------------------|\n| 双瓦楞纸板(面纸为B级以上)   | 边压强度≥ 耐破度≥1100kPa 边压强度≥ 7500 N/m | 技术标准 耐破度≥1400kPa 8000N/m |\nü 塑料袋要求：无色透明，单层厚度不低于8丝。",
+   "sortOrder": 125,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 12,
+     "charStart": 546,
+     "charCount": 8,
+     "exactText": "2.2 材质要求",
+     "status": "linked"
+    },
+    {
+     "page": 12,
+     "charStart": 556,
+     "charCount": 60,
+     "exactText": "ü 纸箱技术标准要求：\n体积范围 大于或等于 0.03 立方米的纸箱 小于 0.03 立方米的纸箱 \n条码为零件号的",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.3",
+   "title": "包装箱印刷版面要求",
+   "parentId": "656ad1b7-ad7c-42b0-b814-6d1d6a52276f",
+   "content": "ü 包装体积大于或等于0.03立方米的纸箱印刷版面参照下图：\n正⾯：",
+   "sortOrder": 126,
+   "suspicious": true,
+   "anchors": [
+    {
+     "page": 13,
+     "charStart": 127,
+     "charCount": 13,
+     "exactText": "2.3 包装箱印刷版面要求",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "⽴体效果：",
+   "parentId": null,
+   "content": "侧⾯：\n版⾯内容距离边缘线的最⼩ 距离为正⾯ LOGO 的⾼度，\n并随 LOGO 的⼤⼩变化⽽变\n化。\nü 包装体积小于0.03立方米的纸箱印刷版面参照下图：\n正⾯：\n侧⾯：",
+   "sortOrder": 127,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "",
+   "title": "⽴体效果：",
+   "parentId": null,
+   "content": "ü 具体详细备件专用包装版面印刷要求，以智界备件部门输出为准。",
+   "sortOrder": 128,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 0,
+     "charStart": 0,
+     "charCount": 0,
+     "exactText": "",
+     "status": "pending"
+    }
+   ]
+  },
+  {
+   "number": "2.4",
+   "title": "包装防护要求",
+   "parentId": "5164ed85-fe5a-47d7-8c24-79c1a2e60def",
+   "content": "ü 保护性：包装设计时应将对零件的包装保护性放在第一位，包装保护首 先考虑要符合零件特性要求，如：防锈、防潮、防尘等要求，其次要考虑流通中 的各种损害因素，如：堆码负荷、震动、冲击、温湿度等因素。\nü 便捷性：包装设计应简单，方便包装操作和包装处理，在运输工具上装 卸及在仓库存取应方便、高效。\nü 环保性：包装设计选材尽量选用可重复利用和再生的包装材料，可降解 材料。\nü 经济性：在包装材料选择上除考虑零件保护要求的同时，还应考虑其材 料的通用性和经济性。\nü 持续改进性：针对运行中的包装存在批量损坏或安全等问题的包装方案， 须立即整改，并与备件包装工艺人员重新确定包装方案。",
+   "sortOrder": 129,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 14,
+     "charStart": 64,
+     "charCount": 10,
+     "exactText": "2.4 包装防护要求",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 76,
+     "charCount": 70,
+     "exactText": "ü 保护性：包装设计时应将对零件的包装保护性放在第一位，包装保护首\n先考虑要符合零件特性要求，如：防锈、防潮、防尘等要求，其次要考虑流通中",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 132,
+     "charCount": 62,
+     "exactText": "防尘等要求，其次要考虑流通中\n的各种损害因素，如：堆码负荷、震动、冲击、温湿度等因素。\nü 便捷性：包装设计应简单，方便",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 189,
+     "charCount": 62,
+     "exactText": "简单，方便包装操作和包装处理，在运输工具上装\n卸及在仓库存取应方便、高效。\nü 环保性：包装设计选材尽量选用可重复利用和",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 246,
+     "charCount": 56,
+     "exactText": "重复利用和再生的包装材料，可降解\n材料。\nü 经济性：在包装材料选择上除考虑零件保护要求的同时，还应考虑其材",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 304,
+     "charCount": 62,
+     "exactText": "料的通用性和经济性。\nü 持续改进性：针对运行中的包装存在批量损坏或安全等问题的包装方案，\n须立即整改，并与备件包装工艺",
+     "status": "linked"
+    },
+    {
+     "page": 14,
+     "charStart": 361,
+     "charCount": 16,
+     "exactText": "件包装工艺人员重新确定包装方案。",
+     "status": "linked"
+    }
+   ]
+  },
+  {
+   "number": "2.5",
+   "title": "备件专用包装方案的确定",
+   "parentId": "5164ed85-fe5a-47d7-8c24-79c1a2e60def",
+   "content": "贴标签处\nü 智界采购部门在与供应商确认可提供备件专用包装后，供应商应与备件 包装工艺人员确定具体的零件包装方案。\nü 零件包装方案需经过备件包装工艺人员审核确认、封样，并签订书面的 《包装方案确认表》（样表附后）\nü 供应商依据双方确定的包装方案向智界供应备件。当智界公司标识或包 装方案发生变更时，供应商有义务配合智界备件部门完成新包装方案的切换。供 应商若不能按要求切换，智界备件部门按备件供货质量不达标进行处理。\n\n备件包装方案确认表\n\n| 零件                | 零件名           | 小包装        | 小包装                                          | 小包装                  | 中包装                 | 中包装     | 中包装                             | 中包装         | 中包装       |\n|-------------------|---------------|------------|----------------------------------------------|----------------------|---------------------|---------|---------------------------------|-------------|-----------|\n| 序 号 号             | 称             | 包装 数量      | 包装 方式                                        | 包装材料标准               | 包装尺 寸 （cm）          | 包 装 数 量 | 包 装 方 式                         | 包装材 料标准     | 包装尺寸 (cm) |\n| 例 1 A13- 62040 10 | 左后门 玻璃升 降器总 成 | 1 纸盒+ 气泡 袋 | 纸盒：耐破度 ≥1400kPa 边压强 度≥8000N/m 气泡袋：单层 厚0.05mm | 纸盒： 50*7*3 7.5 气泡 袋： | 60*50 1 0 （ 1 0 小 盒 | ）       | 纸 箱 耐破度 ≥1400kPa 边压强 度≥ 8000N/m | 90*51.5* 39 |           |\n供应商签字：\n智界备件包装工艺员：",
+   "sortOrder": 130,
+   "suspicious": false,
+   "anchors": [
+    {
+     "page": 14,
+     "charStart": 379,
+     "charCount": 15,
+     "exactText": "2.5 备件专用包装方案的确定",
+     "status": "linked"
+    },
+    {
+     "page": 15,
+     "charStart": 51,
+     "charCount": 54,
+     "exactText": "案。\nü 零件包装方案需经过备件包装工艺人员审核确认、封样，并签订书面的\n《包装方案确认表》（样表附后）",
+     "status": "linked"
+    },
+    {
+     "page": 15,
+     "charStart": 109,
+     "charCount": 68,
+     "exactText": "供应商依据双方确定的包装方案向智界供应备件。当智界公司标识或包\n装方案发生变更时，供应商有义务配合智界备件部门完成新包装方案的切换。供",
+     "status": "linked"
+    },
+    {
+     "page": 15,
+     "charStart": 165,
+     "charCount": 57,
+     "exactText": "完成新包装方案的切换。供\n应商若不能按要求切换，智界备件部门按备件供货质量不达标进行处理。\n备件包装方案确认表",
+     "status": "linked"
+    }
+   ]
+  }
+ ]
+}
