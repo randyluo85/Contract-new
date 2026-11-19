@@ -18,6 +18,11 @@ def hit(text):
 
 # --- 中文 ---
 check("article-cn", hit("第一条 合同标的")[:2] == ("article-cn", "第一条"))
+check("annex-cn-hyphen", hit("附件7-1：智界公司车辆要求规范")[:2] == ("annex-cn", "附件7-1"))
+check("annex-cn-space", hit("附件 8")[:2] == ("annex-cn", "附件 8"))
+check("annex-cn-alpha", hit("附录A 数据要求")[:2] == ("annex-cn", "附录A"))
+check("annex-cn-table", hit("附表1 交付清单")[:2] == ("annex-cn", "附表1"))
+check("annex-cn-rest", hit("附件7-1：智界公司车辆要求规范")[2].startswith("智界公司车辆要求"))
 check("article-cn-digit", hit("第12条 质量保证")[:2] == ("article-cn", "第12条"))
 check("cn-dash", hit("一、总则")[:2] == ("cn-dash", "一、"))
 check("paren-cn", hit("（一）付款期限")[:2] == ("paren", "（一）"))

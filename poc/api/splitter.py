@@ -90,6 +90,21 @@ def split_clauses(blocks: list[StructBlock]) -> list[SplitClause]:
                 current = node
                 last_family = family
                 continue
+        if hit is None and b.kind == "heading":
+            # 联合判定（Q10 并集）：Docling heading 标签（布局信号）即使无编号家族命中，
+            # 也自成标题节点——公司名/目录/大标题等（浅层级，正文续入其 content）
+            title = (b.text or "").strip()
+            if title:
+                node = SplitClause(
+                    number="", title=title[:40], content="",
+                    page_no=b.page_no, level=1,
+                )
+                clauses.append(node)
+                _pop_stack(stack, 1)
+                stack.append(node)
+                current = node
+                last_family = None
+                continue
         if hit is None:
             if b.kind == "table":
                 md = b.table_markdown or b.text

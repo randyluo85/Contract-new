@@ -28,15 +28,23 @@ _EN_WORD = (
     r"[Tt]erm|TERM)\s+"
 )
 
+# 附件/附录家族（实测盲区：智界协议的「附件7-1：」「附件 8」未命中）：
+# 中文「附件X/附录X」+ 英文 Annex/Appendix（含数字/字母/连字符编号）
+ANNEX_CN = r"(?:附件|附录|附表|附图)",
+
+
 
 def _f(name: str, pattern: str, rule: str) -> tuple[str, re.Pattern, str]:
     return name, re.compile(pattern), rule
 
 
-# 家族表：按优先级从上到下（先具体后泛化；先点分后裸数字）
+# 家族表：按优先级从上到下（先具体后泛化；先点分后裸数字；附件族在点分前）
 FAMILIES: list[tuple[str, re.Pattern, str]] = [
     _f("article-cn", rf"(第[{CN}\d]+条)", "fixed1"),
     _f("en-word", rf"({_EN_WORD}(?:\d+(?:\.\d+)*|[IVX]+|[A-Z])\b)", "fixed1"),
+    # 附件/附录族（中文）：附件7-1、附件 8、附录A、附表1（fixed1：顶层附件章节）
+    _f("annex-cn", "((?:附件|附录|附表|附图)\\s*[\\dA-Za-z]{1,4}(?:\\s*-\\s*\\d+)?)\\s*[：:]?", "fixed1"),
+    # 附件/附录族（英文）：Annex A-1 / Appendix B / Schedule 3（en-word 已含 Annex/Appendix/Schedule 词头+编号）
     _f("alpha-dotted", r"([A-Za-z]\.\d+(?:\.\d+)*)", "depth"),
     _f("dotted", r"(\d+(?:\.\d+)+)", "depth"),
     _f("paren", rf"([（(]\s*(?:[{CN}]+|\d{{1,3}}|[A-Za-z])\s*[）)])", "context"),
