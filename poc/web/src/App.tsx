@@ -462,6 +462,7 @@ export function App() {
         charCount: s.end - s.start,
         exactText: text,
         status: 'linked',
+        source: 'manual', // T6：人工绑定锚点重解析保留
       }));
     if (anchors.length === 0) {
       setBindingMsg('选区无效（跨页中段无法精确定位，请分段绑定）');
@@ -504,6 +505,42 @@ export function App() {
     }
   }
 
+  /** T6 重新解析：警示（树编辑丢弃/人工锚点保留）确认后重跑。 */
+  async function onReparse() {
+    if (!doc) return;
+    const ok = window.confirm(
+      '重新解析将：\n• 重建整棵条款树（人工树编辑将被丢弃）\n• 自动锚点全部重来\n• 人工绑定的锚点尽量保留（按条款编号+标题对回，对不上的进失效清单）\n\n继续？',
+    );
+    if (!ok) return;
+    setBindingMsg('重新解析中…（原文件重新拆分，人工锚点将尽量保留）');
+    const res = await fetch(`/api/documents/${doc.id}/reparse`, { method: 'POST' });
+    if (!res.ok) {
+      setBindingMsg('重解析启动失败');
+      return;
+    }
+    // 轮询到 done 后重载文档（复用现有轮询模式）
+    const timer = setInterval(async () => {
+      try {
+        const d = await fetch(`/api/documents/${doc.id}`).then((r) => r.json());
+        if (d.document.parseStatus === 'done') {
+          clearInterval(timer);
+          applyDoc(d);
+          const lost = d.document.reparseLost ? JSON.parse(d.document.reparseLost) : [];
+          setBindingMsg(
+            lost.length
+              ? `重解析完成：人工锚点已尽量保留；${lost.length} 个锚点失效（${lost.map((l: { number: string; title: string }) => l.number || l.title).join('、')}），请重新绑定`
+              : '重解析完成：人工锚点已保留',
+          );
+        } else if (d.document.parseStatus === 'failed') {
+          clearInterval(timer);
+          setBindingMsg('重解析失败');
+        }
+      } catch {
+        /* 下一轮重试 */
+      }
+    }, 1000);
+  }
+
   return (
     <>
       <header className="topbar">
@@ -516,6 +553,9 @@ export function App() {
             <span className="doc-name">{doc.fileName}</span>
             <span className="doc-pages">{doc.pageCount ?? '…'} 页</span>
             <span className={`status-${doc.parseStatus}`}>{STATUS_TEXT[doc.parseStatus]}</span>
+            {doc.parseStatus === 'done' && (
+              <button className="reparse-btn" onClick={() => void onReparse()}>重新解析</button>
+            )}
           </>
         )}
         {error && <span className="error">{error}</span>}
