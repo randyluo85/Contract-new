@@ -373,3 +373,138 @@ def update_anchor(anchor_id: str, body: dict):
         return {"id": anchor_id, "status": status}
     finally:
         conn.close()
+
+
+# ---------------- T7 人工树编辑最小集（锚点跟随规则服务端执行） ----------------
+
+
+@app.delete("/clauses/{clause_id}")
+def delete_clause(clause_id: str):
+    """删除节点：子节点提升到被删节点的父级；节点锚点随节点删除（Q25 删除=删误拆噪音）。"""
+    conn = db()
+    try:
+        clause = conn.execute("SELECT id, parentId FROM clauses WHERE id=?", (clause_id,)).fetchone()
+        if not clause:
+            raise HTTPException(404, "条款不存在")
+        conn.execute("UPDATE clauses SET parentId=? WHERE parentId=?", (clause["parentId"], clause_id))
+        conn.execute("DELETE FROM anchors WHERE clauseId=?", (clause_id,))
+        conn.execute("DELETE FROM clauses WHERE id=?", (clause_id,))
+        conn.commit()
+        return {"deleted": clause_id}
+    finally:
+        conn.close()
+
+
+@app.post("/clauses/{clause_id}/merge")
+def merge_clause(clause_id: str, body: dict):
+    """合并：本节点（含子孙）并入目标——content 拼接、锚点转挂目标、源删除（Q25 合并=并入）。"""
+    target_id = body.get("targetId")
+    if not target_id:
+        raise HTTPException(400, "targetId 必填")
+    if target_id == clause_id:
+        raise HTTPException(400, "不能合并到自身")
+    conn = db()
+    try:
+        src = conn.execute("SELECT id, documentId, content FROM clauses WHERE id=?", (clause_id,)).fetchone()
+        dst = conn.execute("SELECT id, documentId, parentId, content FROM clauses WHERE id=?", (target_id,)).fetchone()
+        if not src or not dst:
+            raise HTTPException(404, "节点不存在")
+        if src["documentId"] != dst["documentId"]:
+            raise HTTPException(400, "跨文档合并不允许")
+        # 被并节点及其全部子孙
+        ids = []
+        frontier = [clause_id]
+        while frontier:
+            cur = frontier.pop()
+            ids.append(cur)
+            for r in conn.execute("SELECT id FROM clauses WHERE parentId=?", (cur,)).fetchall():
+                frontier.append(r["id"])
+        # 子孙挂到目标的父级（保持层级不塌）
+        for cid in ids:
+            if cid != clause_id:
+                conn.execute("UPDATE clauses SET parentId=? WHERE id=?", (dst["parentId"], cid))
+        # content 拼接、锚点全部转挂目标、删源
+        joined = ((dst["content"] or "") + "\n" + (src["content"] or "")).strip("\n")
+        conn.execute("UPDATE clauses SET content=? WHERE id=?", (joined, target_id))
+        conn.execute("UPDATE anchors SET clauseId=? WHERE clauseId=?", (target_id, clause_id))
+        for cid in ids:
+            if cid != clause_id:
+                conn.execute("UPDATE anchors SET clauseId=? WHERE clauseId=?", (target_id, cid))
+        conn.execute("DELETE FROM clauses WHERE id=?", (clause_id,))
+        conn.commit()
+        return {"merged": clause_id, "into": target_id, "absorbedNodes": len(ids)}
+    finally:
+        conn.close()
+
+
+@app.post("/clauses/{clause_id}/split")
+def split_clause(clause_id: str, body: dict):
+    """拆分：按 content 切点文本拆两节点；锚点按 exactText 归属侧走、跨切点降待确认（Q25）。"""
+    cut_text = body.get("cutText")
+    if not cut_text:
+        raise HTTPException(400, "cutText 必填（第一段结尾的文本片段）")
+    conn = db()
+    try:
+        src = conn.execute(
+            "SELECT id, documentId, parentId, title, content, sortOrder FROM clauses WHERE id=?",
+            (clause_id,),
+        ).fetchone()
+        if not src:
+            raise HTTPException(404, "条款不存在")
+        content = src["content"] or ""
+        pos = content.find(cut_text)
+        if pos < 0:
+            raise HTTPException(400, "cutText 在 content 中找不到")
+        cut_end = pos + len(cut_text)
+        head_content = content[:cut_end]
+        tail_content = content[cut_end:].strip()
+        if not tail_content:
+            raise HTTPException(400, "切点之后没有剩余正文，无法拆分")
+        new_id = str(uuid.uuid4())
+        conn.execute("UPDATE clauses SET content=? WHERE id=?", (head_content, clause_id))
+        conn.execute(
+            "INSERT INTO clauses (id, documentId, parentId, number, title, content, sortOrder, suspicious)"
+            " VALUES (?,?,?,?,?,?,?,?)",
+            (new_id, src["documentId"], src["parentId"], "", f"{src['title']}（续）", tail_content,
+             (src["sortOrder"] or 0) + 1, 0),
+        )
+        # 锚点跟随：exactText 完整含于前段→留原；含于后段→转新节点（保持状态）；跨切点/空文本→降待确认
+        for a in conn.execute("SELECT id, exactText FROM anchors WHERE clauseId=?", (clause_id,)).fetchall():
+            text = a["exactText"] or ""
+            in_head = bool(text) and text in head_content
+            in_tail = bool(text) and text in tail_content
+            if in_head and not in_tail:
+                continue
+            if in_tail and not in_head:
+                conn.execute("UPDATE anchors SET clauseId=? WHERE id=?", (new_id, a["id"]))
+            elif not text:
+                conn.execute("UPDATE anchors SET clauseId=?, status='pending' WHERE id=?", (new_id, a["id"]))
+            else:
+                conn.execute("UPDATE anchors SET status='pending' WHERE id=?", (a["id"],))
+        conn.commit()
+        return {"split": clause_id, "newClauseId": new_id, "headLen": len(head_content), "tailLen": len(tail_content)}
+    finally:
+        conn.close()
+
+
+@app.put("/clauses/{clause_id}")
+def update_clause(clause_id: str, body: dict):
+    """重挂+改编号：parentId/number/title 可改，锚点不动（Q25 重挂不动锚点）。"""
+    conn = db()
+    try:
+        row = conn.execute("SELECT id FROM clauses WHERE id=?", (clause_id,)).fetchone()
+        if not row:
+            raise HTTPException(404, "条款不存在")
+        sets, vals = [], []
+        for col in ("parentId", "number", "title"):
+            if col in body:
+                sets.append(f"{col}=?")
+                vals.append(body[col])
+        if not sets:
+            raise HTTPException(400, "无要修改的字段（parentId/number/title）")
+        vals.append(clause_id)
+        conn.execute(f"UPDATE clauses SET {', '.join(sets)} WHERE id=?", vals)
+        conn.commit()
+        return {"updated": clause_id, **{k: body[k] for k in body if k in ("parentId", "number", "title")}}
+    finally:
+        conn.close()

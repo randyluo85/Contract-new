@@ -51,7 +51,7 @@ const BADGE: Record<string, { text: string; cls: string }> = {
   unlocated: { text: '未定位', cls: 'badge unlocated' },
 };
 
-function Tree({ clauses, onPick, activeId, onConfirm }: { clauses: Clause[]; onPick: (c: Clause) => void; activeId: string | null; onConfirm: (c: Clause) => void }) {
+function Tree({ clauses, onPick, activeId, onConfirm, onEdit }: { clauses: Clause[]; onPick: (c: Clause) => void; activeId: string | null; onConfirm: (c: Clause) => void; onEdit: (c: Clause, action: 'delete' | 'merge' | 'split' | 'renumber') => void }) {
   const byParent = new Map<string | null, Clause[]>();
   for (const c of clauses) {
     const list = byParent.get(c.parentId) ?? [];
@@ -65,7 +65,7 @@ function Tree({ clauses, onPick, activeId, onConfirm }: { clauses: Clause[]; onP
   return (
     <div className="tree">
       {roots.map((c) => (
-        <Node key={c.id} c={c} byParent={byParent} depth={0} onPick={onPick} activeId={activeId} onConfirm={onConfirm} />
+        <Node key={c.id} c={c} byParent={byParent} depth={0} onPick={onPick} activeId={activeId} onConfirm={onConfirm} onEdit={onEdit} />
       ))}
     </div>
   );
@@ -78,6 +78,7 @@ function Node({
   onPick,
   activeId,
   onConfirm,
+  onEdit,
 }: {
   c: Clause;
   byParent: Map<string | null, Clause[]>;
@@ -85,6 +86,7 @@ function Node({
   onPick: (c: Clause) => void;
   activeId: string | null;
   onConfirm: (c: Clause) => void;
+  onEdit: (c: Clause, action: 'delete' | 'merge' | 'split' | 'renumber') => void;
 }) {
   const children = byParent.get(c.id) ?? [];
   const badge = BADGE[clauseState(c)];
@@ -106,9 +108,18 @@ function Node({
             onClick={(e) => { e.stopPropagation(); onConfirm(c); }}
           >确认</button>
         )}
+        <details className="edit-menu" onClick={(e) => e.stopPropagation()}>
+          <summary title="编辑此条款（拆分/合并/删除/改编号）">✎</summary>
+          <div className="edit-pop">
+            <button onClick={() => onEdit(c, 'split')}>拆分（按切点文本）</button>
+            <button onClick={() => onEdit(c, 'merge')}>合并到…</button>
+            <button onClick={() => onEdit(c, 'renumber')}>改编号/标题</button>
+            <button onClick={() => onEdit(c, 'delete')}>删除</button>
+          </div>
+        </details>
       </div>
       {children.map((ch) => (
-        <Node key={ch.id} c={ch} byParent={byParent} depth={depth + 1} onPick={onPick} activeId={activeId} onConfirm={onConfirm} />
+        <Node key={ch.id} c={ch} byParent={byParent} depth={depth + 1} onPick={onPick} activeId={activeId} onConfirm={onConfirm} onEdit={onEdit} />
       ))}
     </div>
   );
@@ -485,6 +496,63 @@ export function App() {
     setPendingSelection(null);
   }
 
+  /** T7 树编辑（轻量 UI：prompt/confirm 驱动；锚点跟随在服务端执行）。 */
+  async function onEditClause(c: Clause, action: 'delete' | 'merge' | 'split' | 'renumber') {
+    if (!doc) return;
+    let res: unknown;
+    try {
+      if (action === 'delete') {
+        if (!window.confirm(`删除「${c.number || c.title}」及其锚点？（子条款提升到其父级）`)) return;
+        res = await fetch(`/api/clauses/${c.id}`, { method: 'DELETE' });
+      } else if (action === 'merge') {
+        const targetTitle = window.prompt(`把「${c.number || c.title}」合并到哪个条款？（输入该条款编号或标题的准确文本）`);
+        if (!targetTitle) return;
+        const target = clauses.find(
+          (x) => x.id !== c.id && (x.number === targetTitle || x.title === targetTitle || `${x.number} ${x.title}`.trim() === targetTitle),
+        );
+        if (!target) {
+          setBindingMsg('找不到目标条款（需输入准确的编号或标题）');
+          return;
+        }
+        res = await fetch(`/api/clauses/${c.id}/merge`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ targetId: target.id }),
+        });
+      } else if (action === 'split') {
+        const cut = window.prompt('在哪个文本处切开？（输入第一段结尾的一小段原文）');
+        if (!cut) return;
+        res = await fetch(`/api/clauses/${c.id}/split`, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ cutText: cut }),
+        });
+      } else {
+        const number = window.prompt('新编号（留空不改）', c.number) ?? '';
+        const title = window.prompt('新标题（留空不改）', c.title) ?? '';
+        const body: Record<string, string> = {};
+        if (number && number !== c.number) body.number = number;
+        if (title && title !== c.title) body.title = title;
+        if (!Object.keys(body).length) return;
+        res = await fetch(`/api/clauses/${c.id}`, {
+          method: 'PUT',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+      }
+      if (res && (res as Response).ok) {
+        const d = await fetch(`/api/documents/${doc.id}`).then((r) => r.json());
+        setClauses(d.clauses);
+        clausesRef.current = d.clauses;
+        setBindingMsg('树编辑已保存（锚点按规则跟随）');
+      } else {
+        setBindingMsg('编辑失败：' + ((res as Response)?.status ?? ''));
+      }
+    } catch {
+      setBindingMsg('编辑请求异常');
+    }
+  }
+
   /** T5 确认动作：待确认条款 → 已关联（首个 pending 锚点翻 linked）。 */
   async function confirmClause(c: Clause) {
     const a = c.anchors.find((x) => x.status === 'pending' && x.charCount > 0);
@@ -564,7 +632,7 @@ export function App() {
         <aside>
           {notice && <div className="notice">{notice}</div>}
           {locating && <div className="locating">锚点核验：{locating}</div>}
-          <Tree clauses={clauses} onPick={onPick} activeId={activeId} onConfirm={(c) => void confirmClause(c)} />
+          <Tree clauses={clauses} onPick={onPick} activeId={activeId} onConfirm={(c) => void confirmClause(c)} onEdit={(c, a) => void onEditClause(c, a)} />
           {readback && (
             <div className="readback">
               <span>从 PDF 读回的原文</span>

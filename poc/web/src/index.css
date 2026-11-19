@@ -173,3 +173,37 @@ section { flex: 1; position: relative; min-width: 0; background: #525659; }
   cursor: pointer;
 }
 .reparse-btn:hover { background: #fef2f2; }
+.edit-menu { position: relative; display: inline-block; flex: none; }
+.edit-menu summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #6b7280;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+.edit-menu summary:hover { background: #e5e7eb; color: #2563eb; }
+.edit-menu[open] .edit-pop {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  z-index: 20;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  padding: 4px;
+}
+.edit-pop button {
+  text-align: left;
+  background: #fff;
+  border: none;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.edit-pop button:hover { background: #eff6ff; }
