@@ -6,12 +6,27 @@
 !/README.md
 !/AGENTS.md
 !/CLAUDE.md
+!/GLOSSARY.md
 !/docs/
 !/docs/**
 
 # 以后要版本化的代码目录，按需放开
 !/scripts/
 !/scripts/**
+
+# POC 代码（T1 起）：前端/后端/样例入库；数据目录保持忽略
+!/poc/
+!/poc/api/
+!/poc/api/**
+__pycache__/
+poc/api/.venv/
+!/poc/web/
+!/poc/web/**
+poc/web/node_modules/
+poc/web/dist/
+poc/web/.vite/
+!/poc/samples/
+!/poc/samples/**
 
 # ---- 明确排除（即使以后调整白名单也别误提交）----
 # _work/ 是本地流水线产物：抽取结果、PDF 测试、EmbedPDF 源码克隆

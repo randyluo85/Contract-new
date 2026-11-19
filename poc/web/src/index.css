@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+#root {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, 'PingFang SC', sans-serif;
+  color: #1f2937;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fafafa;
+  flex: none;
+}
+.upload-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+.upload-btn:hover { background: #1d4ed8; }
+.doc-name { font-weight: 600; }
+.doc-pages, .status-parsing, .status-done, .status-failed { font-size: 13px; color: #6b7280; }
+.status-done { color: #16a34a; font-weight: 600; }
+.status-failed, .error { color: #dc2626; }
+
+main { flex: 1; display: flex; min-height: 0; }
+aside {
+  width: 35%;
+  min-width: 260px;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  padding: 10px;
+  background: #fff;
+}
+section { flex: 1; position: relative; min-width: 0; background: #525659; }
+.placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  background: #fff;
+}
+
+.tree { font-size: 14px; }
+.node-line { display: flex; align-items: center; gap: 6px; padding: 4px 0; }
+.node-line .num { color: #2563eb; font-weight: 600; flex: none; }
+.node-line .title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badge { font-size: 11px; padding: 1px 6px; border-radius: 999px; flex: none; }
+.badge.linked { background: #dcfce7; color: #15803d; }
+.badge.pending { background: #fef3c7; color: #b45309; }
+.badge.unlocated { background: #f3f4f6; color: #6b7280; }

@@ -14,9 +14,10 @@
 | `docs/agents/triage-labels.md` | 五个 triage 角色 → 本仓库实际标签串的映射 |
 | `docs/agents/domain.md` | 域文档消费规则；布局为 single-context（根 `GLOSSARY.md` + `docs/adr/`） |
 | `docs/agents/workspace.yaml` | 本工作区的 issue 追踪后端选择（matt skills deck 的锚文件，随仓库共享） |
+| `GLOSSARY.md` | 统一语言：条款、锚点、定位三态等词条 |
 | `scripts/` | 需要版本化的脚本（目前为空） |
 
-`GLOSSARY.md` 与 `docs/adr/` 尚未创建：按 `docs/agents/domain.md` 的约定，等第一次真正写下词条或架构决定时再建。
+`GLOSSARY.md` 已建立（词条随条款定位讨论逐条落定）；`docs/adr/` 已收录 ADR-0001（锚点主键：页+字符区间+exactText）与 ADR-0002（Docling 坐标仅作候选，须核验）。
 
 ## 本地工作区（不入库）
 
