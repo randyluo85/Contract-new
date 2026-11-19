@@ -96,3 +96,36 @@ section { flex: 1; position: relative; min-width: 0; background: #525659; }
   overflow-y: auto;
   white-space: pre-wrap;
 }
+.reverse-none {
+  background: #f3f4f6;
+  color: #6b7280;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.reverse-candidates {
+  margin-top: 8px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 8px;
+  font-size: 12px;
+}
+.reverse-candidates span { color: #6b7280; }
+.reverse-candidates ul { list-style: none; margin: 4px 0 0; padding: 0; }
+.reverse-candidates li { margin: 2px 0; }
+.reverse-candidates button {
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.reverse-candidates button:hover { background: #eff6ff; border-color: #93c5fd; }
+.reverse-candidates em {
+  color: #2563eb;
+  font-style: normal;
+  float: right;
+}

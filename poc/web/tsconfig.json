@@ -12,5 +12,6 @@
     "jsx": "react-jsx",
     "strict": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/reverse.test.ts"]  // node 直跑单测（--experimental-strip-types），不进 tsc
 }

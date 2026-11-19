@@ -3,6 +3,7 @@ import { PDFViewer } from '@embedpdf/viewer-react';
 import type { Viewer } from '@embedpdf/viewer-react';
 import type { SearchHit } from '@embedpdf/plugin-search/contract';
 import { anchorsForClause } from './locate';
+import { reverseLocate, spansOfRange, type ReverseAnchor, type ReverseCandidate } from './reverse';
 
 interface Anchor {
   id: string;
@@ -119,6 +120,10 @@ export function App() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [readback, setReadback] = useState<string | null>(null);
   const [locating, setLocating] = useState<string | null>(null);
+  const [reverseInfo, setReverseInfo] = useState<
+    | { kind: 'none' }
+    | { kind: 'candidates'; candidates: ReverseCandidate[]; selectedText: string }
+  | null>(null);
 
   useEffect(() => {
     return () => {
@@ -337,6 +342,44 @@ export function App() {
     }
   }
 
+  /** T4 反向定位：用户拖选结束（onCommitted 仅手势触发）→ 与锚点求交。 */
+  async function onSelectionCommitted(range: {
+    start: { page: unknown; index?: number };
+    end: { page: unknown; index?: number };
+  }) {
+    setReverseInfo(null);
+    const caps = await capsAwait();
+    if (!caps) return;
+    // 锚点集合（当前文档全部条款的锚点，charCount>0 才参与）
+    const anchors: ReverseAnchor[] = [];
+    for (const c of clauses) {
+      for (const a of c.anchors) {
+        anchors.push({ clauseId: c.id, page: a.page, charStart: a.charStart, charCount: a.charCount });
+      }
+    }
+    const spans = spansOfRange(range as Parameters<typeof spansOfRange>[0]);
+    const verdict = reverseLocate(spans, anchors);
+    if (verdict.kind === 'unique') {
+      // 唯一且占比高：左树自动选中并展开（复用正向 onPick 的视觉反馈）
+      const target = clauses.find((c) => c.id === verdict.clauseId);
+      if (target) {
+        await onPick(target);
+        setReverseInfo(null);
+      }
+    } else if (verdict.kind === 'ambiguous') {
+      // 歧义：读回选中文本供参考，列候选条款供确认
+      let selectedText = '';
+      try {
+        selectedText = await caps.selection.readText();
+      } catch {
+        selectedText = '';
+      }
+      setReverseInfo({ kind: 'candidates', candidates: verdict.candidates, selectedText });
+    } else {
+      setReverseInfo({ kind: 'none' }); // 无对应（页眉/封面）——空提示
+    }
+  }
+
   return (
     <>
       <header className="topbar">
@@ -364,6 +407,27 @@ export function App() {
               <blockquote>{readback}</blockquote>
             </div>
           )}
+          {reverseInfo?.kind === 'none' && (
+            <div className="reverse-none">所选文字不属于任何条款（页眉/封面等）</div>
+          )}
+          {reverseInfo?.kind === 'candidates' && (
+            <div className="reverse-candidates">
+              <span>该选区命中多个候选条款（重叠排序）：</span>
+              <ul>
+                {reverseInfo.candidates.slice(0, 6).map((cand) => {
+                  const target = clauses.find((c) => c.id === cand.clauseId);
+                  return (
+                    <li key={cand.clauseId}>
+                      <button onClick={() => target && onPick(target)}>
+                        {target ? `${target.number || ''} ${target.title}`.trim() : cand.clauseId}
+                        <em>重叠 {cand.overlap} 字（{Math.round(cand.ratio * 100)}%）</em>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </aside>
         <section>
           {pdfSrc ? (
@@ -374,8 +438,16 @@ export function App() {
               elementRef={(el) => { elRef.current = el; }}
               onReady={(viewer) => {
                 viewerRef.current = viewer;
-                                // 文档就绪 + 有条款且大多无锚点 → 触发 T3 候选生成
+                // 文档就绪 + 有条款且大多无锚点 → 触发 T3 候选生成
                 void tryGenerate();
+                // T4 反向定位：订阅 selection.onCommitted（EventHook 是函数本身：listener → Unsubscribe）。
+                const sel = viewer.tryGet('selection');
+                if (sel?.onCommitted) {
+                  const off = sel.onCommitted((ev: { range: unknown }) => {
+                    void onSelectionCommitted(ev.range as Parameters<typeof onSelectionCommitted>[0]);
+                  });
+                  (elRef.current as unknown as Record<string, unknown>).__t4_off_committed = off;
+                }
               }}
             />
           ) : (
