@@ -58,3 +58,13 @@ section { flex: 1; position: relative; min-width: 0; background: #525659; }
 .badge.linked { background: #dcfce7; color: #15803d; }
 .badge.pending { background: #fef3c7; color: #b45309; }
 .badge.unlocated { background: #f3f4f6; color: #6b7280; }
+.badge.suspect { background: #fee2e2; color: #dc2626; }
+.notice {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}

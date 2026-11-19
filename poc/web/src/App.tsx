@@ -17,6 +17,7 @@ interface Clause {
   title: string;
   content: string | null;
   sortOrder: number;
+  suspicious: boolean;
   anchors: Anchor[];
 }
 
@@ -82,6 +83,7 @@ function Node({
       <div className="node-line">
         <span className="num">{c.number}</span>
         <span className="title" title={c.title}>{c.title}</span>
+        {c.suspicious && <span className="badge suspect" title="可疑节点（Q24 五规则自检命中）">⚠</span>}
         <span className={badge.cls}>{badge.text}</span>
       </div>
       {children.map((ch) => (
@@ -97,6 +99,7 @@ export function App() {
   const [clauses, setClauses] = useState<Clause[]>([]);
   const [pdfSrc, setPdfSrc] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
     return () => {
@@ -111,9 +114,10 @@ export function App() {
     }
   }
 
-  function applyDoc(d: { document: Doc; clauses: Clause[] }) {
+  function applyDoc(d: { document: Doc; clauses: Clause[]; notice?: string | null }) {
     setDoc(d.document);
     setClauses(d.clauses);
+    setNotice(d.notice ?? null);
     setPdfSrc(`/api/documents/${d.document.id}/file`);
   }
 
@@ -180,6 +184,7 @@ export function App() {
       </header>
       <main>
         <aside>
+          {notice && <div className="notice">{notice}</div>}
           <Tree clauses={clauses} />
         </aside>
         <section>

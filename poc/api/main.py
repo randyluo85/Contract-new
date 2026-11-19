@@ -17,6 +17,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pypdf import PdfReader
 
+from parser import default_parser
+from splitter import audit_suspicious, split_clauses
+
 BASE = Path(__file__).resolve().parent
 DATA = BASE.parent / "data"          # poc/data/
 PDFS = DATA / "pdfs"
@@ -44,7 +47,8 @@ CREATE TABLE IF NOT EXISTS clauses (
   number     TEXT NOT NULL,
   title      TEXT NOT NULL,
   content    TEXT,
-  sortOrder  INTEGER NOT NULL
+  sortOrder  INTEGER NOT NULL,
+  suspicious INTEGER NOT NULL DEFAULT 0
 );
 CREATE TABLE IF NOT EXISTS anchors (
   id         TEXT PRIMARY KEY,
@@ -63,56 +67,51 @@ def db() -> sqlite3.Connection:
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    # T2 迁移：T1 旧库 clauses 缺 suspicious 列时补上
+    cols = {r["name"] for r in conn.execute("PRAGMA table_info(clauses)")}
+    if "suspicious" not in cols:
+        conn.execute("ALTER TABLE clauses ADD COLUMN suspicious INTEGER NOT NULL DEFAULT 0")
+        conn.commit()
     return conn
 
 
-# ---------------- stub 解析器（T1：固定假条款；T2 换 Docling 实现） ----------------
-
-STUB_CLAUSES = [
-    ("第一条", "合同标的", [
-        ("1.1", "产品名称"),
-        ("1.2", "产品数量"),
-    ]),
-    ("第二条", "付款方式", [
-        ("2.1", "付款期限"),
-        ("2.2", "付款条件"),
-    ]),
-    ("第三条", "违约责任", [
-        ("3.1", "违约金"),
-        ("3.2", "赔偿责任"),
-    ]),
-]
-
-STUB_CONTENT = "（stub 解析器占位正文，T2 将替换为 Docling 解析结果。）"
+# ---------------- 解析任务（T2：Parser 接口 + 拆分器 + 五规则自检） ----------------
 
 
-def run_stub_parse(document_id: str) -> None:
-    """后台任务：模拟解析耗时后写入固定假条款树，置 done；异常置 failed。"""
+def run_parse(document_id: str) -> None:
+    """后台任务：Parser（默认 Docling，POC_PARSER=stub 可切）→ 拆分 → 自检 → 落库；异常置 failed。"""
+    pdf_path = PDFS / f"{document_id}.pdf"
     try:
-        time.sleep(1.0)
+        blocks = default_parser().parse(str(pdf_path))
+        clauses = split_clauses(blocks)
+        audit_suspicious(clauses)
+
         conn = db()
-        order = 0
-        for num, title, children in STUB_CLAUSES:
-            top_id = str(uuid.uuid4())
-            conn.execute(
-                "INSERT INTO clauses (id, documentId, parentId, number, title, content, sortOrder)"
-                " VALUES (?,?,?,?,?,?,?)",
-                (top_id, document_id, None, num, title, STUB_CONTENT, order),
-            )
-            order += 1
-            for sub_num, sub_title in children:
+        try:
+            order = 0
+            stack: list[tuple[int, str]] = []  # (level, id)
+            for c in clauses:
+                cid = str(uuid.uuid4())
+                while stack and stack[-1][0] >= c.level:
+                    stack.pop()
+                parent_id = stack[-1][1] if stack else None
                 conn.execute(
-                    "INSERT INTO clauses (id, documentId, parentId, number, title, content, sortOrder)"
-                    " VALUES (?,?,?,?,?,?,?)",
-                    (str(uuid.uuid4()), document_id, top_id, sub_num, sub_title, STUB_CONTENT, order),
+                    "INSERT INTO clauses (id, documentId, parentId, number, title, content, sortOrder, suspicious)"
+                    " VALUES (?,?,?,?,?,?,?,?)",
+                    (cid, document_id, parent_id, c.number, c.title, c.content, order,
+                     1 if c.suspicious else 0),
                 )
                 order += 1
-        conn.execute(
-            "UPDATE documents SET parseStatus='done' WHERE id=?", (document_id,)
-        )
-        conn.commit()
-        conn.close()
+                stack.append((c.level, cid))
+            conn.execute(
+                "UPDATE documents SET parseStatus='done' WHERE id=?", (document_id,)
+            )
+            conn.commit()
+        finally:
+            conn.close()
     except Exception:
+        import traceback
+        traceback.print_exc()
         conn = db()
         conn.execute(
             "UPDATE documents SET parseStatus='failed' WHERE id=?", (document_id,)
@@ -162,13 +161,13 @@ async def parse(file: UploadFile, background: BackgroundTasks):
         conn.close()
 
     (PDFS / f"{doc_id}.pdf").write_bytes(data)  # 原件副本，重开恢复用
-    background.add_task(run_stub_parse, doc_id)
+    background.add_task(run_parse, doc_id)
     return {"documentId": doc_id, "parseStatus": "parsing", "existed": False}
 
 
 def _clause_rows(conn, document_id):
     rows = conn.execute(
-        "SELECT id, parentId, number, title, content, sortOrder FROM clauses"
+        "SELECT id, parentId, number, title, content, sortOrder, suspicious FROM clauses"
         " WHERE documentId=? ORDER BY sortOrder",
         (document_id,),
     ).fetchall()
@@ -188,6 +187,7 @@ def _clause_rows(conn, document_id):
             "title": r["title"],
             "content": r["content"],
             "sortOrder": r["sortOrder"],
+            "suspicious": bool(r["suspicious"]),
             "anchors": amap.get(r["id"], []),
         }
         for r in rows
@@ -204,9 +204,13 @@ def get_document(document_id: str):
         ).fetchone()
         if not doc:
             raise HTTPException(404, "文档不存在")
+        clauses = _clause_rows(conn, document_id)
+        empty_tree = doc["parseStatus"] == "done" and len(clauses) == 0
         return {
             "document": dict(doc),
-            "clauses": _clause_rows(conn, document_id),
+            "clauses": clauses,
+            "notice": ("未提取到任何条款：这份 PDF 没有可提取的文字层（疑似扫描件）。"
+                        "本 POC 仅支持文字型 PDF，详见规格 Out of Scope。") if empty_tree else None,
         }
     finally:
         conn.close()

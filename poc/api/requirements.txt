@@ -1,0 +1,8 @@
+# POC 后端依赖（T2 实测后的真实清单）
+# 注：docling-slim 最小集不含布局模型所需 torch —— 纯文字 PDF 也必须 standard extras（含 OCR 依赖，do_ocr=False 时不会实际执行 OCR）。
+docling-slim[standard]>=2.150
+fastapi>=0.165
+uvicorn[standard]>=0.54
+pypdf>=7.1
+python-multipart>=0.0.34
+packaging
