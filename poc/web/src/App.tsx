@@ -51,7 +51,7 @@ const BADGE: Record<string, { text: string; cls: string }> = {
   unlocated: { text: '未定位', cls: 'badge unlocated' },
 };
 
-function Tree({ clauses, onPick, activeId }: { clauses: Clause[]; onPick: (c: Clause) => void; activeId: string | null }) {
+function Tree({ clauses, onPick, activeId, onConfirm }: { clauses: Clause[]; onPick: (c: Clause) => void; activeId: string | null; onConfirm: (c: Clause) => void }) {
   const byParent = new Map<string | null, Clause[]>();
   for (const c of clauses) {
     const list = byParent.get(c.parentId) ?? [];
@@ -65,7 +65,7 @@ function Tree({ clauses, onPick, activeId }: { clauses: Clause[]; onPick: (c: Cl
   return (
     <div className="tree">
       {roots.map((c) => (
-        <Node key={c.id} c={c} byParent={byParent} depth={0} onPick={onPick} activeId={activeId} />
+        <Node key={c.id} c={c} byParent={byParent} depth={0} onPick={onPick} activeId={activeId} onConfirm={onConfirm} />
       ))}
     </div>
   );
@@ -77,12 +77,14 @@ function Node({
   depth,
   onPick,
   activeId,
+  onConfirm,
 }: {
   c: Clause;
   byParent: Map<string | null, Clause[]>;
   depth: number;
   onPick: (c: Clause) => void;
   activeId: string | null;
+  onConfirm: (c: Clause) => void;
 }) {
   const children = byParent.get(c.id) ?? [];
   const badge = BADGE[clauseState(c)];
@@ -97,9 +99,16 @@ function Node({
         <span className="title" title={c.title}>{c.title}</span>
         {c.suspicious && <span className="badge suspect" title="可疑节点（Q24 五规则自检命中）">⚠</span>}
         <span className={badge.cls}>{badge.text}</span>
+        {badge === BADGE.pending && (
+          <button
+            className="confirm-btn"
+            title="确认该条款的锚点（待确认→已关联）"
+            onClick={(e) => { e.stopPropagation(); onConfirm(c); }}
+          >确认</button>
+        )}
       </div>
       {children.map((ch) => (
-        <Node key={ch.id} c={ch} byParent={byParent} depth={depth + 1} onPick={onPick} activeId={activeId} />
+        <Node key={ch.id} c={ch} byParent={byParent} depth={depth + 1} onPick={onPick} activeId={activeId} onConfirm={onConfirm} />
       ))}
     </div>
   );
@@ -124,6 +133,11 @@ export function App() {
     | { kind: 'none' }
     | { kind: 'candidates'; candidates: ReverseCandidate[]; selectedText: string }
   | null>(null);
+  const [pendingSelection, setPendingSelection] = useState<{
+    spans: { page: number; start: number; end: number }[];
+    text: string;
+  } | null>(null); // 当前用户选区（onChanged 实时快照——绑定时用）
+  const [bindingMsg, setBindingMsg] = useState<string | null>(null); // 绑定/确认操作反馈
 
   useEffect(() => {
     return () => {
@@ -177,8 +191,45 @@ export function App() {
     setNotice(d.notice ?? null);
     setActiveId(null);
     setReadback(null);
+    setBindingMsg(null);
+    setPendingSelection(null);
     setPdfSrc(`/api/documents/${d.document.id}/file`);
     void tryGenerate();
+    // T5 重开恢复：对已有关联（linked 且有区间）的锚点跑核验重算——
+    // 失败降「待确认」并列入待办清单（核验= exactText 页内重搜读回比对，Q19 纯锚点驱动）
+    void reverifyAnchors(d.document.id, d.clauses);
+  }
+
+  /** T5 恢复核验：linked 锚点重搜比对；失败→降 pending + 待办清单。 */
+  async function reverifyAnchors(documentId: string, list: Clause[]) {
+    const caps = await capsAwait();
+    if (!caps) return;
+    const failed: string[] = [];
+    for (const c of list) {
+      for (const a of c.anchors) {
+        if (a.status !== 'linked' || a.charCount === 0 || !a.exactText) continue;
+        try {
+          const hits = (await caps.search.findAll({ text: a.exactText, wholeWord: false })) as readonly SearchHit[];
+          const onPage = hits.filter((h) => h.pageIndex === a.page);
+          if (!onPage.length) {
+            failed.push(c.id);
+            await fetch(`/api/anchors/${a.id}`, {
+              method: 'PUT',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ status: 'pending' }),
+            }).catch(() => {});
+          }
+        } catch {
+          failed.push(c.id);
+        }
+      }
+    }
+    if (failed.length) {
+      const d = await fetch(`/api/documents/${documentId}`).then((r) => r.json());
+      setClauses(d.clauses);
+      clausesRef.current = d.clauses;
+      setBindingMsg(`重开核验：${failed.length} 个锚点失效已降级「待确认」，请重新绑定`);
+    }
   }
 
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
@@ -380,6 +431,79 @@ export function App() {
     }
   }
 
+  /** T5 人工绑定：左选中条款 + 右选区 → 关联当前条款（整组替换保存）。 */
+  async function bindCurrentSelection() {
+    const target = clauses.find((c) => c.id === activeId);
+    if (!target) {
+      setBindingMsg('先在左侧选中一个条款');
+      return;
+    }
+    if (!pendingSelection || pendingSelection.spans.length === 0) {
+      setBindingMsg('先在右侧 PDF 中选中一段原文');
+      return;
+    }
+    const caps = await capsAwait();
+    if (!caps) {
+      setBindingMsg('PDF 引擎未就绪');
+      return;
+    }
+    // 读回选中文本（exactText 优先用真实读回；失败用空串仅存区间）
+    let text = '';
+    try {
+      text = await caps.selection.readText();
+    } catch {
+      text = '';
+    }
+    const anchors = pendingSelection.spans
+      .filter((s) => Number.isFinite(s.end) && s.end > s.start)
+      .map((s) => ({
+        page: s.page,
+        charStart: s.start,
+        charCount: s.end - s.start,
+        exactText: text,
+        status: 'linked',
+      }));
+    if (anchors.length === 0) {
+      setBindingMsg('选区无效（跨页中段无法精确定位，请分段绑定）');
+      return;
+    }
+    const res = await fetch(`/api/clauses/${target.id}/anchors`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ anchors }),
+    });
+    if (!res.ok) {
+      setBindingMsg('保存失败：' + res.status);
+      return;
+    }
+    // 刷新树（拉最新锚点）并给反馈
+    const d = await fetch(`/api/documents/${doc!.id}`).then((r) => r.json());
+    setClauses(d.clauses);
+    clausesRef.current = d.clauses;
+    setBindingMsg(`已绑定 ${target.number || target.title}（${anchors.length} 锚点）`);
+    setPendingSelection(null);
+  }
+
+  /** T5 确认动作：待确认条款 → 已关联（首个 pending 锚点翻 linked）。 */
+  async function confirmClause(c: Clause) {
+    const a = c.anchors.find((x) => x.status === 'pending' && x.charCount > 0);
+    if (!a) {
+      setBindingMsg('该条款没有可确认的锚点（先人工绑定原文）');
+      return;
+    }
+    const res = await fetch(`/api/anchors/${a.id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ status: 'linked' }),
+    });
+    if (res.ok) {
+      const d = await fetch(`/api/documents/${doc!.id}`).then((r) => r.json());
+      setClauses(d.clauses);
+      clausesRef.current = d.clauses;
+      setBindingMsg(`已确认 ${c.number || c.title}`);
+    }
+  }
+
   return (
     <>
       <header className="topbar">
@@ -400,7 +524,7 @@ export function App() {
         <aside>
           {notice && <div className="notice">{notice}</div>}
           {locating && <div className="locating">锚点核验：{locating}</div>}
-          <Tree clauses={clauses} onPick={onPick} activeId={activeId} />
+          <Tree clauses={clauses} onPick={onPick} activeId={activeId} onConfirm={(c) => void confirmClause(c)} />
           {readback && (
             <div className="readback">
               <span>从 PDF 读回的原文</span>
@@ -409,6 +533,21 @@ export function App() {
           )}
           {reverseInfo?.kind === 'none' && (
             <div className="reverse-none">所选文字不属于任何条款（页眉/封面等）</div>
+          )}
+          {/* T5 人工绑定操作条 */}
+          {doc && doc.parseStatus === 'done' && (
+            <div className="bind-bar">
+              <button
+                className="bind-btn"
+                onClick={() => void bindCurrentSelection()}
+                disabled={!activeId || !pendingSelection}
+                title="左侧选中条款 + 右侧选中原文后点击"
+              >
+                关联当前条款
+              </button>
+              {pendingSelection && <em>右侧已选 {pendingSelection.spans.length} 段</em>}
+              {bindingMsg && <span className="bind-msg">{bindingMsg}</span>}
+            </div>
           )}
           {reverseInfo?.kind === 'candidates' && (
             <div className="reverse-candidates">
@@ -440,8 +579,24 @@ export function App() {
                 viewerRef.current = viewer;
                 // 文档就绪 + 有条款且大多无锚点 → 触发 T3 候选生成
                 void tryGenerate();
-                // T4 反向定位：订阅 selection.onCommitted（EventHook 是函数本身：listener → Unsubscribe）。
+                // T4 反向定位 + T5 人工绑定：订阅 selection 事件。
                 const sel = viewer.tryGet('selection');
+                // onChanged：实时选区快照（绑定流程用——用户可能先选字再点关联按钮）
+                if (sel?.onChanged) {
+                  sel.onChanged((ev: { range: unknown }) => {
+                    const r = ev.range as { start?: unknown; end?: unknown } | null;
+                    if (r && r.start && r.end) {
+                      try {
+                        const spans = spansOfRange(r as Parameters<typeof spansOfRange>[0]);
+                        setPendingSelection({ spans, text: '' });
+                      } catch {
+                        setPendingSelection(null);
+                      }
+                    } else {
+                      setPendingSelection(null);
+                    }
+                  });
+                }
                 if (sel?.onCommitted) {
                   const off = sel.onCommitted((ev: { range: unknown }) => {
                     void onSelectionCommitted(ev.range as Parameters<typeof onSelectionCommitted>[0]);
